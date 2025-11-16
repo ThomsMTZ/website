@@ -11,7 +11,9 @@
     "lint:fix": "next lint --fix",
     "format": "prettier -w .",
     "format:check": "prettier -c .",
-    "analyze": "ANALYZE=true next build"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.1",
@@ -30,15 +32,22 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^15",
     "@tailwindcss/typography": "^0.5.19",
+    "@testing-library/jest-dom": "^6",
+    "@testing-library/react": "^16",
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.5",
     "autoprefixer": "latest",
+    "cross-env": "^7",
     "eslint": "^9.39.1",
     "eslint-config-next": "^15",
+    "jsdom": "^25",
     "postcss": "latest",
+    "prettier": "^3",
     "sass": "^1.69.5",
     "tailwindcss": "latest",
-    "prettier": "^3",
-    "@next/bundle-analyzer": "^15"
+    "vitest": "^3.2.4"
   },
   "engines": {
     "node": ">=18.18",
