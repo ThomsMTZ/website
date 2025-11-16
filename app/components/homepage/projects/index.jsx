@@ -1,6 +1,5 @@
 "use client";
 
-import { projectsData } from '@/utils/data/projects-data';
 import { useTranslation } from '@/utils/i18n';
 import ProjectCard from './project-card';
 
@@ -21,7 +20,7 @@ const Projects = () => {
 
       <div className="pt-24">
         <div className="flex flex-col gap-6">
-          {projectsData.slice(0, 4).map((project, index) => (
+          {t.projects.list.slice(0, 4).map((project, index) => (
             <div
               id={`sticky-card-${index + 1}`}
               key={index}

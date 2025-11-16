@@ -1,7 +1,6 @@
 // @flow strict
 "use client";
 
-import { educations } from "@/utils/data/educations";
 import { useTranslation } from "@/utils/i18n";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
@@ -48,7 +47,7 @@ function Education() {
           <div>
             <div className="flex flex-col gap-6">
               {
-                educations.map(education => (
+                t.education.list.map(education => (
                   <GlowCard key={education.id} identifier={`education-${education.id}`}>
                     <div className="p-3 relative text-white">
                       <Image

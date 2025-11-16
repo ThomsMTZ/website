@@ -30,6 +30,7 @@ export const fr = {
   about: {
     title: "À PROPOS DE MOI",
     heading: "Qui suis-je ?",
+    description: "Je suis un ingénieur logiciel passionné par la résolution de problèmes et l'apprentissage continu. J'ai de l'expérience dans diverses technologies et j'aime travailler sur des projets stimulants qui repoussent mes limites. Je suis également un Scrum Master certifié, ce qui me permet de diriger efficacement des équipes et d'assurer la réussite de la livraison des projets.",
   },
 
   // Skills Section
@@ -40,17 +41,66 @@ export const fr = {
   // Experience Section
   experience: {
     title: "Expériences",
+    list: [
+      {
+        id: 1,
+        title: 'Ingénieur Logiciel (FullStack, Scrum Master)',
+        company: "Tricentis, France",
+        duration: "(Oct 2020 - Mars 2025)"
+      },
+      {
+        id: 2,
+        title: "Chef d'Intervention Bénévole",
+        company: "Croix-Rouge Française",
+        duration: "(Nov 2022 – Aujourd'hui)"
+      },
+      {
+        id: 3,
+        title: "Ingénieur Logiciel (FullStack, Scrum Master)",
+        company: "Thales, Roumanie",
+        duration: "(Mai 2025 - Présent)"
+      }
+    ],
   },
 
   // Projects Section
   projects: {
     title: "PROJETS",
     viewMore: "Voir Plus",
+    list: [
+      {
+        id: 1,
+        name: 'Tutoriel Expo React Native',
+        description: "L'objectif principal est de maîtriser les fondamentaux de React Native et du framework Expo afin de pouvoir construire ma propre application par la suite. Ce tutoriel a été très enrichissant et m'a permis de comprendre les subtilités du framework.",
+        tools: ['React-Native', 'Typescript', 'Expo'],
+        role: 'Développeur FullStack',
+      },
+    ],
   },
 
   // Education Section
   education: {
     title: "Formations",
+    list: [
+      {
+        id: 1,
+        title: "Diplôme d'Ingénieur en Informatique & Technologie",
+        duration: "2017 – 2020",
+        institution: "École Polytechnique de Marseille",
+      },
+      {
+        id: 2,
+        title: "TOEIC",
+        duration: "2020",
+        institution: "835 points",
+      },
+      {
+        id: 3,
+        title: "PSM 1 Scrum Master",
+        duration: "2024",
+        institution: "Scrum.org",
+      }
+    ],
   },
 
   // Contact Section

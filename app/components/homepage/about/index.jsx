@@ -23,7 +23,7 @@ function AboutSection() {
             {t.about.heading}
           </p>
           <p className="text-gray-200 text-sm lg:text-lg">
-            {personalData.description}
+            {t.about.description}
           </p>
         </div>
         <div className="flex justify-center order-1 lg:order-2">

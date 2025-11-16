@@ -30,6 +30,7 @@ export const en = {
   about: {
     title: "ABOUT ME",
     heading: "Who I am?",
+    description: "I am a software engineer with a passion for problem-solving and continuous learning. I have experience in various technologies and enjoy working on challenging projects that push my limits. I am also a certified Scrum Master, which allows me to effectively lead teams and ensure successful project delivery.",
   },
 
   // Skills Section
@@ -40,17 +41,66 @@ export const en = {
   // Experience Section
   experience: {
     title: "Experiences",
+    list: [
+      {
+        id: 1,
+        title: 'Software Engineer (FullStack, Scrum Master)',
+        company: "Tricentis, France",
+        duration: "(Oct 2020 - March 2025)"
+      },
+      {
+        id: 2,
+        title: "Volunteer Intervention Leader",
+        company: "French Red Cross",
+        duration: "(Nov 2022 – Now)"
+      },
+      {
+        id: 3,
+        title: "Software Engineer (FullStack, Scrum Master)",
+        company: "Thales, Roumania",
+        duration: "(May 2025 - Present)"
+      }
+    ],
   },
 
   // Projects Section
   projects: {
     title: "PROJECTS",
     viewMore: "View More",
+    list: [
+      {
+        id: 1,
+        name: 'Expo React native Tutorial',
+        description: "The main objective is to master the fundamentals of React Native and the Expo framework in order to be able to build my own application afterwards. This tutorial has been very enriching and has allowed me to understand the subtleties of the framework.",
+        tools: ['React-Native', 'Typescript', 'Expo'],
+        role: 'FullStack Developer',
+      },
+    ],
   },
 
   // Education Section
   education: {
     title: "Educations",
+    list: [
+      {
+        id: 1,
+        title: "Engineering Degree in Computer Science & Technology ",
+        duration: "2017 – 2020",
+        institution: "PolyTech School in Marseille",
+      },
+      {
+        id: 2,
+        title: "TOEIC",
+        duration: "2020",
+        institution: "835 points",
+      },
+      {
+        id: 3,
+        title: "PSM 1 Scrum Master",
+        duration: "2024",
+        institution: "Scrum.org",
+      }
+    ],
   },
 
   // Contact Section
