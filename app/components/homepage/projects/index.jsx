@@ -1,7 +1,10 @@
-import { projectsData } from '@/utils/data/projects-data';
+"use client";
+
+import { useTranslation } from '@/utils/i18n';
 import ProjectCard from './project-card';
 
 const Projects = () => {
+  const { t } = useTranslation();
 
   return (
     <div id='projects' className="relative z-50 pt-20 my-12 lg:my-24">
@@ -9,7 +12,7 @@ const Projects = () => {
         <div className="w-[80px] h-[80px] bg-violet-100 rounded-full absolute -top-3 left-0 translate-x-1/2 filter blur-3xl  opacity-30"></div>
         <div className="flex items-center justify-start relative">
           <span className="bg-[#1a1443] absolute left-0  w-fit text-white px-5 py-3 text-xl rounded-md">
-            PROJECTS
+            {t.projects.title}
           </span>
           <span className="w-full h-[2px] bg-[#1a1443]"></span>
         </div>
@@ -17,7 +20,7 @@ const Projects = () => {
 
       <div className="pt-24">
         <div className="flex flex-col gap-6">
-          {projectsData.slice(0, 4).map((project, index) => (
+          {t.projects.list.slice(0, 4).map((project, index) => (
             <div
               id={`sticky-card-${index + 1}`}
               key={index}

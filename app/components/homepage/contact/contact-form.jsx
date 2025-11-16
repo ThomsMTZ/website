@@ -1,12 +1,14 @@
 "use client";
 // @flow strict
 import {isValidEmail} from "@/utils/check-email";
+import { useTranslation } from "@/utils/i18n";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {TbMailForward} from "react-icons/tb";
 import {toast} from "react-toastify";
 
 function ContactForm() {
+    const { t } = useTranslation();
     const [error, setError] = useState({email: false, required: false});
     const [isLoading, setIsLoading] = useState(false);
     const [mountedAt, setMountedAt] = useState(0); // timestamp anti-bot
@@ -49,13 +51,13 @@ function ContactForm() {
 
             await axios.post(`/api/contact`, payload);
 
-            toast.success("Message sent successfully!");
+            toast.success(t.contact.form.success);
             setUserInput({name: "", email: "", message: "", hp: ""});
         } catch (err) {
             const msg =
                 err?.response?.data?.message ||
                 err?.response?.data?.error ||
-                "Something went wrong.";
+                t.contact.form.error;
             toast.error(msg);
         } finally {
             setIsLoading(false);
@@ -65,15 +67,15 @@ function ContactForm() {
     return (
         <div>
             <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
-                Contact with me
+                {t.contact.heading}
             </p>
             <div className="max-w-3xl text-white rounded-lg border border-[#464c6a] p-3 lg:p-5">
                 <p className="text-sm text-[#d3d8e8]">
-                    {"If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests."}
+                    {t.contact.description}
                 </p>
                 <form className="mt-6 flex flex-col gap-4" onSubmit={handleSendMail}>
                     <div className="flex flex-col gap-2">
-                        <label className="text-base" htmlFor="name">Your Name: </label>
+                        <label className="text-base" htmlFor="name">{t.contact.form.name} </label>
                         <input
                             id="name"
                             name="name"
@@ -89,7 +91,7 @@ function ContactForm() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-base" htmlFor="email">Your Email: </label>
+                        <label className="text-base" htmlFor="email">{t.contact.form.email} </label>
                         <input
                             id="email"
                             name="email"
@@ -106,12 +108,12 @@ function ContactForm() {
                             }}
                         />
                         {error.email && (
-                            <p className="text-sm text-red-400">Please provide a valid email!</p>
+                            <p className="text-sm text-red-400">{t.contact.form.invalidEmail}</p>
                         )}
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-base" htmlFor="message">Your Message: </label>
+                        <label className="text-base" htmlFor="message">{t.contact.form.message} </label>
                         <textarea
                             id="message"
                             name="message"
@@ -139,7 +141,7 @@ function ContactForm() {
 
                     <div className="flex flex-col items-center gap-3">
                         {error.required && (
-                            <p className="text-sm text-red-400">All fields are required!</p>
+                            <p className="text-sm text-red-400">{t.contact.form.required}</p>
                         )}
                         <button
                             type="submit"
@@ -148,10 +150,10 @@ function ContactForm() {
                             aria-busy={isLoading}
                         >
                             {isLoading ? (
-                                <span>Sending Message...</span>
+                                <span>{t.contact.form.sending}</span>
                             ) : (
                                 <span className="flex items-center gap-1">
-                  Send Message
+                  {t.contact.form.send}
                   <TbMailForward size={20} />
                 </span>
                             )}
