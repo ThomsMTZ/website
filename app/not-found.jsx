@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { useTranslation } from "@/utils/i18n";
 
-function page() {
+function NotFoundPage() {
   const { t } = useTranslation();
 
   return (
@@ -22,4 +22,4 @@ function page() {
   );
 };
 
-export default page;
+export default NotFoundPage;
