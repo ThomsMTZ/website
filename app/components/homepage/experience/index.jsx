@@ -1,5 +1,8 @@
 // @flow strict
+"use client";
+
 import { experiences } from "@/utils/data/experience";
+import { useTranslation } from "@/utils/i18n";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
 import experience from '../../../assets/lottie/code.json';
@@ -7,6 +10,8 @@ import LottieWrapper from "../../helper/lottie-wrapper";
 import GlowCard from "../../helper/glow-card";
 
 function Experience() {
+  const { t } = useTranslation();
+
   return (
     <div id="experience" className="relative pt-20 z-50 border-t my-12 lg:my-24 border-[#25213b]">
       <Image
@@ -21,7 +26,7 @@ function Experience() {
         <div className="flex  items-center">
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
           <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Experiences
+            {t.experience.title}
           </span>
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>

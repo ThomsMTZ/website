@@ -1,7 +1,13 @@
 // @flow strict
+"use client";
+
 import Link from "next/link";
+import { useTranslation } from "@/utils/i18n";
+import LanguageSwitcher from "./language-switcher";
 
 function Navbar() {
+    const { t } = useTranslation();
+
     return (
         <nav
             className="fixed top-0 left-0 w-full z-[9999] bg-gradient-to-r from-[#0b0f1a] via-[#1a1440] to-[#150b24] shadow-md">
@@ -27,7 +33,7 @@ function Navbar() {
                             href="/#about"
                         >
                             <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                                ABOUT
+                                {t.navbar.about}
                             </div>
                         </Link>
                     </li>
@@ -37,7 +43,7 @@ function Navbar() {
                             href="/#experience"
                         >
                             <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                                EXPERIENCE
+                                {t.navbar.experience}
                             </div>
                         </Link>
                     </li>
@@ -47,7 +53,7 @@ function Navbar() {
                             href="/#skills"
                         >
                             <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                                SKILLS
+                                {t.navbar.skills}
                             </div>
                         </Link>
                     </li>
@@ -57,7 +63,7 @@ function Navbar() {
                             href="/#projects"
                         >
                             <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                                PROJECTS
+                                {t.navbar.projects}
                             </div>
                         </Link>
                     </li>
@@ -67,9 +73,12 @@ function Navbar() {
                             href="/#education"
                         >
                             <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                                EDUCATION
+                                {t.navbar.education}
                             </div>
                         </Link>
+                    </li>
+                    <li className="flex items-center px-4 py-2">
+                        <LanguageSwitcher />
                     </li>
                 </ul>
             </div>
