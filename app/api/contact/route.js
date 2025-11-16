@@ -1,57 +1,55 @@
-import axios from 'axios';
-import { NextResponse } from 'next/server';
+import {NextResponse} from 'next/server';
+import {z} from 'zod';
 
-// Helper function to send a message via Telegram
-async function sendTelegramMessage(token, chat_id, message) {
-  const url = `https://api.telegram.org/bot${token}/sendMessage`;
-  try {
-    const res = await axios.post(url, {
-      text: message,
-      chat_id,
-    });
-    return res.data.ok;
-  } catch (error) {
-    console.error('Error sending Telegram message:', error.response?.data || error.message);
-    return false;
-  }
-};
+const schema = z.object({
+    name: z.string().min(2).max(100),
+    email: z.string().email(),
+    message: z.string().min(10).max(5000),
+    token: z.string().min(1),
+});
 
-export async function POST(request) {
-  try {
-    const payload = await request.json();
-    const { name, email, message: userMessage } = payload;
-    const token = process.env.TELEGRAM_BOT_TOKEN;
-    const chat_id = process.env.TELEGRAM_CHAT_ID;
+const hits = new Map();
+const WINDOW_MS = 60_000;
+const LIMIT = 5;
 
-    // Validate environment variables
-    if (!token || !chat_id) {
-      return NextResponse.json({
-        success: false,
-        message: 'Telegram token or chat ID is missing.',
-      }, { status: 400 });
+function rateLimited(ip) {
+    const now = Date.now();
+    const arr = (hits.get(ip) || []).filter((t) => now - t < WINDOW_MS);
+    arr.push(now);
+    hits.set(ip, arr);
+    return arr.length > LIMIT;
+}
+
+export async function POST(req) {
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+    if (rateLimited(ip)) {
+        return NextResponse.json({ok: false, error: 'Too Many Requests'}, {status: 429});
     }
 
-    const message = `New message from ${name}\n\nEmail: ${email}\n\nMessage:\n\n${userMessage}\n\n`;
-
-    // Send Telegram message
-    const telegramSuccess = await sendTelegramMessage(token, chat_id, message);
-
-    if (telegramSuccess ) {
-      return NextResponse.json({
-        success: true,
-        message: 'Message sent successfully!',
-      }, { status: 200 });
+    const body = await req.json().catch(() => null);
+    const parsed = schema.safeParse(body);
+    if (!parsed.success) {
+        return NextResponse.json({ok: false, error: 'Invalid payload'}, {status: 400});
     }
 
-    return NextResponse.json({
-      success: false,
-      message: 'Failed to send message or email.',
-    }, { status: 500 });
-  } catch (error) {
-    console.error('API Error:', error.message);
-    return NextResponse.json({
-      success: false,
-      message: 'Server error occurred.',
-    }, { status: 500 });
-  }
-};
+    try {
+        const res = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: new URLSearchParams({
+                secret: process.env.RECAPTCHA_SECRET_KEY || '',
+                response: parsed.data.token,
+            }),
+            cache: 'no-store',
+        });
+        const verify = await res.json();
+        if (!verify.success || (typeof verify.score === 'number' && verify.score < 0.5)) {
+            return NextResponse.json({ok: false, error: 'reCAPTCHA failed'}, {status: 400});
+        }
+    } catch {
+        return NextResponse.json({ok: false, error: 'Captcha check error'}, {status: 502});
+    }
+
+    // TODO: envoi via un provider (Resend, SendGrid, SES)
+    return NextResponse.json({ok: true}, {status: 200});
+}
