@@ -11,18 +11,18 @@ export const fr = {
   // Hero Section
   hero: {
     greeting: "Bonjour,",
-    thisIs: "Voici",
+    thisIs: "Je m'appelle",
     professional: "Je suis un Professionnel",
     contactMe: "Contactez-moi",
     getResume: "Télécharger le CV",
     coder: {
-      name: "nom:",
-      skills: "compétences:",
-      hardWorker: "travailleur:",
-      quickLearner: "apprentissageRapide:",
-      problemSolver: "résolveurDeProblèmes:",
-      hireable: "recrutabilité:",
-      returnStatement: "retourner",
+      name: "name:",
+      skills: "skills:",
+      hardWorker: "hardWorker:",
+      quickLearner: "quickLearner:",
+      problemSolver: "problemSolver:",
+      hireable: "hireable:",
+      returnStatement: "return",
     },
   },
 
