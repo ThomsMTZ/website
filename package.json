@@ -7,11 +7,15 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.1",
-    "@next/third-parties": "15.1.1",
+    "@next/third-parties": "^15",
     "axios": "^1.6.8",
     "lottie-react": "^2.4.1",
     "next": "^15.5.6",
@@ -29,9 +33,20 @@
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "latest",
     "eslint": "^9.39.1",
-    "eslint-config-next": "15.1.1",
+    "eslint-config-next": "^15",
     "postcss": "latest",
     "sass": "^1.69.5",
-    "tailwindcss": "latest"
-  }
+    "tailwindcss": "latest",
+    "prettier": "^3",
+    "@next/bundle-analyzer": "^15"
+  },
+  "engines": {
+    "node": ">=18.18",
+    "npm": ">=9"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not op_mini all"
+  ]
 }
