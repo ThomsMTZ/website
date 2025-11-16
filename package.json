@@ -11,8 +11,6 @@
     "lint:fix": "next lint --fix",
     "format": "prettier -w .",
     "format:check": "prettier -c .",
-    "test": "vitest run",
-    "test:watch": "vitest",
     "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
@@ -46,8 +44,7 @@
     "postcss": "latest",
     "prettier": "^3",
     "sass": "^1.69.5",
-    "tailwindcss": "latest",
-    "vitest": "^3.2.4"
+    "tailwindcss": "latest"
   },
   "engines": {
     "node": ">=18.18",
