@@ -1,90 +1,172 @@
-# 🚀 Portfolio Personnel – Thomas Martinez
+# 🚀 Developer Portfolio – Thomas Martinez
 
-Bienvenue sur mon portfolio ! Ce site web a pour objectif de présenter mes réalisations, mes compétences et mon parcours professionnel de développeur. Il s’agit d’une vitrine moderne pour exposer mon travail, partager mes projets et offrir un aperçu de qui je suis en tant que professionnel du numérique.
-
----
-
-## 🎯 Objectif
-
-Ce portfolio sert à :
-- Mettre en avant mon expertise technique et créative,
-- Présenter une sélection de mes projets et expériences passées,
-- Faciliter le contact professionnel et le partage de mon CV,
-- Expérimenter et démontrer l’utilisation de technologies web récentes.
+Welcome to my portfolio! This website showcases my achievements, skills, and professional journey as a developer. It's a modern platform to present my work, share my projects, and provide insights into who I am as a digital professional.
 
 ---
 
-## 🛠️ Technologies et outils utilisés
+## 🎯 Purpose
 
-Le projet a été conçu avec les technologies et frameworks suivants :
-
-- **[Next.js 15 (App Router)](https://nextjs.org/)** — Framework React moderne pour le rendu côté serveur et la génération statique,
-- **[React 19](https://react.dev/)** — Librairie JavaScript pour construire l’interface utilisateur,
-- **[TypeScript](https://www.typescriptlang.org/)** — Surcouche JavaScript typée garantissant robustesse et maintenabilité,
-- **[Tailwind CSS](https://tailwindcss.com/)** — Framework CSS utilitaire pour un design moderne et responsive,
-- **[Lottie](https://airbnb.io/lottie/#/)** — Gestion des animations vectorielles légères et dynamiques,
-- **[Framer Motion](https://www.framer.com/motion/)** — Animations fluides et interactives pour React,
-- **[Sass](https://sass-lang.com/)** — Préprocesseur CSS,
-- **[Axios](https://axios-http.com/)** — Requêtes HTTP faciles et sécurisées,
-- **[React Icons](https://react-icons.github.io/react-icons/)** — Pack d’icônes populaire pour React,
-- **[React Toastify](https://fkhadra.github.io/react-toastify/)** — Notifications toast élégantes,
-- **[React Google ReCAPTCHA](https://www.npmjs.com/package/react-google-recaptcha)** — Protection anti-spam de formulaire,
-- **[Nodemailer](https://nodemailer.com/)** — Envoi d’e-mails côté serveur,
-- **[sharp](https://sharp.pixelplumbing.com/)** — Manipulation d’images côté serveur,
-- **[Docker](https://www.docker.com/)** — Conteneurisation et facilitation du déploiement,
-- **Déploiement via [Vercel](https://vercel.com/)**.
+This portfolio serves to:
+- Highlight my technical and creative expertise
+- Showcase a selection of my projects and past experiences
+- Facilitate professional contact and share my resume
+- Demonstrate the use of modern web technologies
 
 ---
 
-## ✨ Fonctionnalités principales
+## 🛠️ Tech Stack
 
-- Interface UI responsive, claire et moderne
-- Animations avancées avec Lottie & Framer Motion
-- Présentation détaillée des compétences, projets, expériences et formation
-- Navigation fluide entre les sections (About, Projets, Contact, etc.)
-- Formulaire de contact sécurisé (intégration reCAPTCHA + Nodemailer)
-- Version anglaise & française possible
-- Accès direct au CV en téléchargement PDF
-- Modularité grâce à une architecture de composants réutilisables
-- Intégration facilitée avec Google Analytics (GTM)
+This project is built with the following technologies and frameworks:
 
----
+### Core Framework
+- **[Next.js 15 (App Router)](https://nextjs.org/)** — Modern React framework for server-side rendering and static generation
+- **[React 19](https://react.dev/)** — JavaScript library for building user interfaces
 
-## 🏁 Lancer le projet en local
+### Languages & Styling
+- **[TypeScript](https://www.typescriptlang.org/)** — Typed JavaScript for enhanced code quality and maintainability
+- **[Tailwind CSS](https://tailwindcss.com/)** — Utility-first CSS framework for modern, responsive design
+- **[Sass](https://sass-lang.com/)** — CSS preprocessor
 
-### Prérequis
-- Node.js `>=18`
-- npm (ou pnpm/yarn)
-- (Facultatif) Docker
+### UI & Animations
+- **[Lottie](https://airbnb.io/lottie/#/)** — Lightweight and dynamic vector animations
+- **[Framer Motion](https://www.framer.com/motion/)** — Smooth and interactive animations for React
+- **[React Icons](https://react-icons.github.io/react-icons/)** — Popular icon pack for React
 
-### Installation & lancement
-- npm install
-- npm run dev
+### Features & Utilities
+- **[Axios](https://axios-http.com/)** — Promise-based HTTP client
+- **[React Toastify](https://fkhadra.github.io/react-toastify/)** — Elegant toast notifications
+- **[React Google ReCAPTCHA](https://www.npmjs.com/package/react-google-recaptcha)** — Form spam protection
+- **[Nodemailer](https://nodemailer.com/)** — Server-side email sending
+- **[sharp](https://sharp.pixelplumbing.com/)** — High-performance image processing
 
-## 📁 Structure du projet
-
-- `app/` — Structure principale avec sous-dossiers pour chaque section (about, blog, contact, projets, etc.)
-- `components/` — Composants UI réutilisables
-- `public/` — Images, icônes, CV PDF
-- `utils/` — Fonctions utilitaires globales
-- `css/` — Styles généraux
+### DevOps & Deployment
+- **[Docker](https://www.docker.com/)** — Containerization for easier deployment
+- **[Vercel](https://vercel.com/)** — Hosting and deployment platform
 
 ---
 
-## 📄 Aperçu des projets intégrés
+## ✨ Key Features
 
-Chaque projet présenté dans la section dédiée décrit :
-- Les objectifs,
-- Les stacks techniques utilisées,
-- Mon rôle,
-- Et – si disponible – les liens vers le code ou une démo en ligne.
-
----
-
-## 🤝 Contribution et contact
-
-Le code est ouvert à la consultation, n’hésitez pas à me contacter pour toute question professionnelle depuis la page de contact ou via le CV joint.
+- **Responsive Design** — Clean, modern UI that works on all devices
+- **Advanced Animations** — Engaging user experience with Lottie & Framer Motion
+- **Comprehensive Portfolio** — Detailed presentation of skills, projects, experience, and education
+- **Smooth Navigation** — Fluid transitions between sections (About, Projects, Contact, etc.)
+- **Secure Contact Form** — reCAPTCHA integration with Nodemailer for email handling
+- **Multilingual Support** — English and French versions available
+- **Downloadable Resume** — Direct PDF download access
+- **Modular Architecture** — Reusable component-based structure
+- **Analytics Integration** — Google Analytics (GTM) ready
 
 ---
 
-**Merci pour votre visite !**
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js `>=18.18`
+- npm `>=9` (or pnpm/yarn)
+- Docker (optional)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/ThomsMTZ/website.git
+cd website
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+### Available Scripts
+
+- `npm run dev` — Start development server with Turbopack
+- `npm run build` — Build the application for production
+- `npm start` — Start the production server
+- `npm run lint` — Run ESLint to check code quality
+- `npm run lint:fix` — Automatically fix ESLint issues
+- `npm run format` — Format code with Prettier
+- `npm run format:check` — Check code formatting
+- `npm test` — Run Jest tests
+- `npm run test:watch` — Run tests in watch mode
+- `npm run test:coverage` — Generate test coverage report
+
+### Docker Support
+
+Build and run with Docker:
+```bash
+# Development
+docker-compose up
+
+# Production
+docker build -f Dockerfile.prod -t portfolio .
+docker run -p 3000:3000 portfolio
+```
+
+---
+
+## 📁 Project Structure
+
+```
+├── app/                  # Next.js App Router pages and layouts
+│   ├── api/             # API routes
+│   ├── blog/            # Blog section
+│   ├── components/      # Page-specific components
+│   ├── assets/          # Static assets
+│   └── css/             # Global styles
+├── public/              # Public assets (images, icons, PDF resume)
+├── utils/               # Utility functions and helpers
+├── docs/                # Documentation
+└── package.json         # Project dependencies and scripts
+```
+
+---
+
+## 📄 Featured Projects
+
+Each project showcased in the portfolio includes:
+- Project objectives and goals
+- Technologies and tools used
+- My role and contributions
+- Links to source code and live demos (when available)
+
+---
+
+## 🧪 Testing
+
+The project includes comprehensive test coverage using Jest and React Testing Library:
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Generate coverage report
+npm run test:coverage
+```
+
+---
+
+## 🤝 Contributing & Contact
+
+This code is open for review. Feel free to reach out for any professional inquiries through the contact page or via the resume provided.
+
+---
+
+## 📝 License
+
+This project is licensed under the terms specified in the LICENSE file.
+
+---
+
+**Thank you for visiting!** 🎉
