@@ -9,17 +9,26 @@ import Projects from "@/components/homepage/projects";
 import Skills from "@/components/homepage/skills";
 
 async function getData() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+  // Skip fetching if devUsername is not configured or network is unavailable
+  if (!personalData.devUsername) {
+    return [];
   }
-
-  const data = await res.json();
-
-  const filtered = data.filter((item) => item?.cover_image).sort(() => Math.random() - 0.5);
-
-  return filtered;
+  
+  try {
+    const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
+    
+    if (!res.ok) {
+      return [];
+    }
+    
+    const data = await res.json();
+    const filtered = data.filter((item) => item?.cover_image).sort(() => Math.random() - 0.5);
+    return filtered;
+  } catch (error) {
+    // Return empty array if fetch fails (e.g., network issues)
+    console.error('Failed to fetch blog data:', error);
+    return [];
+  }
 };
 
 export default async function Home() {

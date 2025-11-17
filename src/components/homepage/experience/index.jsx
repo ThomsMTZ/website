@@ -4,7 +4,7 @@
 import { useTranslation } from "@/i18n";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
-import experience from '/app/assets/lottie/code.json';
+import experience from '../../../../app/assets/lottie/code.json';
 import LottieWrapper from "@/components/helper/lottie-wrapper";
 import GlowCard from "@/components/helper/glow-card";
 
