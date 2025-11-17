@@ -63,11 +63,16 @@ Le projet a été conçu avec les technologies et frameworks suivants :
 
 ## 📁 Structure du projet
 
-- `app/` — Structure principale avec sous-dossiers pour chaque section (about, blog, contact, projets, etc.)
-- `components/` — Composants UI réutilisables
+- `app/` — Structure principale Next.js avec routes et pages
+  - `api/` — Routes API Next.js
+  - `css/` — Styles globaux
+  - `assets/` — Fichiers statiques (animations, images)
+- `src/` — Code source organisé selon les bonnes pratiques
+  - `components/` — Composants React réutilisables
+  - `config/` — Configuration et données statiques
+  - `lib/` — Fonctions utilitaires
+  - `i18n/` — Système d'internationalisation
 - `public/` — Images, icônes, CV PDF
-- `utils/` — Fonctions utilitaires globales
-- `css/` — Styles généraux
 
 ---
 
