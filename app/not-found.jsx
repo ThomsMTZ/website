@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { useTranslation } from "@/utils/i18n";
+import { useTranslation } from "@/i18n";
 
 function NotFoundPage() {
   const { t } = useTranslation();

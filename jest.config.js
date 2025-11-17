@@ -10,7 +10,11 @@ const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/components/(.*)$': '<rootDir>/src/components/$1',
+    '^@/lib/(.*)$': '<rootDir>/src/lib/$1',
+    '^@/config/(.*)$': '<rootDir>/src/config/$1',
+    '^@/i18n/(.*)$': '<rootDir>/src/i18n/$1',
   },
   testMatch: [
     '**/__tests__/**/*.[jt]s?(x)',
@@ -18,7 +22,7 @@ const customJestConfig = {
   ],
   collectCoverageFrom: [
     'app/**/*.{js,jsx,ts,tsx}',
-    'utils/**/*.{js,jsx,ts,tsx}',
+    'src/**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
     '!**/.next/**',
