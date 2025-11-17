@@ -1,107 +1,58 @@
-# 🚀 Developer Portfolio – Thomas Martinez
+# Thomas Martinez - Developer Portfolio
 
-Welcome to my portfolio! This website showcases my achievements, skills, and professional journey as a developer. It's a modern platform to present my work, share my projects, and provide insights into who I am as a digital professional.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)](https://www.typescriptlang.org/)
 
----
+A modern, responsive portfolio website built with Next.js 15 and React 19, showcasing professional projects, skills, and experience with smooth animations and multilingual support.
 
-## 🎯 Purpose
+![Portfolio Preview](public/hero.svg)
 
-This portfolio serves to:
-- Highlight my technical and creative expertise
-- Showcase a selection of my projects and past experiences
-- Facilitate professional contact and share my resume
-- Demonstrate the use of modern web technologies
+## ✨ Features
 
----
+- 🎨 **Modern UI/UX** - Clean, responsive design with smooth animations using Lottie and Framer Motion
+- 🌍 **Multilingual** - English and French language support with easy extensibility
+- 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
+- 🎯 **SEO Optimized** - Built with Next.js 15 App Router for optimal performance
+- 📧 **Contact Form** - Secure contact form with reCAPTCHA and Nodemailer integration
+- 🧪 **Well Tested** - Comprehensive test coverage with Jest and React Testing Library
+- 🐳 **Docker Support** - Containerized setup for easy deployment
 
-## 🛠️ Tech Stack
-
-This project is built with the following technologies and frameworks:
-
-### Core Framework
-- **[Next.js 15 (App Router)](https://nextjs.org/)** — Modern React framework for server-side rendering and static generation
-- **[React 19](https://react.dev/)** — JavaScript library for building user interfaces
-
-### Languages & Styling
-- **[TypeScript](https://www.typescriptlang.org/)** — Typed JavaScript for enhanced code quality and maintainability
-- **[Tailwind CSS](https://tailwindcss.com/)** — Utility-first CSS framework for modern, responsive design
-- **[Sass](https://sass-lang.com/)** — CSS preprocessor
-
-### UI & Animations
-- **[Lottie](https://airbnb.io/lottie/#/)** — Lightweight and dynamic vector animations
-- **[Framer Motion](https://www.framer.com/motion/)** — Smooth and interactive animations for React
-- **[React Icons](https://react-icons.github.io/react-icons/)** — Popular icon pack for React
-
-### Features & Utilities
-- **[Axios](https://axios-http.com/)** — Promise-based HTTP client
-- **[React Toastify](https://fkhadra.github.io/react-toastify/)** — Elegant toast notifications
-- **[React Google ReCAPTCHA](https://www.npmjs.com/package/react-google-recaptcha)** — Form spam protection
-- **[Nodemailer](https://nodemailer.com/)** — Server-side email sending
-- **[sharp](https://sharp.pixelplumbing.com/)** — High-performance image processing
-
-### DevOps & Deployment
-- **[Docker](https://www.docker.com/)** — Containerization for easier deployment
-- **[Vercel](https://vercel.com/)** — Hosting and deployment platform
-
----
-
-## ✨ Key Features
-
-- **Responsive Design** — Clean, modern UI that works on all devices
-- **Advanced Animations** — Engaging user experience with Lottie & Framer Motion
-- **Comprehensive Portfolio** — Detailed presentation of skills, projects, experience, and education
-- **Smooth Navigation** — Fluid transitions between sections (About, Projects, Contact, etc.)
-- **Secure Contact Form** — reCAPTCHA integration with Nodemailer for email handling
-- **Multilingual Support** — English and French versions available
-- **Downloadable Resume** — Direct PDF download access
-- **Modular Architecture** — Reusable component-based structure
-- **Analytics Integration** — Google Analytics (GTM) ready
-
----
-
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js `>=18.18`
-- npm `>=9` (or pnpm/yarn)
-- Docker (optional)
+
+Ensure you have the following installed:
+- **Node.js** >= 18.18
+- **npm** >= 9 (or yarn/pnpm)
 
 ### Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/ThomsMTZ/website.git
-cd website
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ThomsMTZ/website.git
+   cd website
+   ```
 
-2. Install dependencies:
-```bash
-npm install
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-3. Run the development server:
-```bash
-npm run dev
-```
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+4. **Open your browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-### Available Scripts
+### Docker Setup
 
-- `npm run dev` — Start development server with Turbopack
-- `npm run build` — Build the application for production
-- `npm start` — Start the production server
-- `npm run lint` — Run ESLint to check code quality
-- `npm run lint:fix` — Automatically fix ESLint issues
-- `npm run format` — Format code with Prettier
-- `npm run format:check` — Check code formatting
-- `npm test` — Run Jest tests
-- `npm run test:watch` — Run tests in watch mode
-- `npm run test:coverage` — Generate test coverage report
+Run with Docker for a consistent environment:
 
-### Docker Support
-
-Build and run with Docker:
 ```bash
 # Development
 docker-compose up
@@ -111,62 +62,98 @@ docker build -f Dockerfile.prod -t portfolio .
 docker run -p 3000:3000 portfolio
 ```
 
----
+## 📖 Usage
 
-## 📁 Project Structure
+### Customizing Content
+
+Edit the data files in `utils/data/` to personalize your portfolio:
+
+- **Personal Information**: `utils/data/personal-data.js`
+- **Projects**: `utils/data/projects-data.js`
+- **Skills**: `utils/data/skills.js`
+- **Experience**: `utils/data/experience.js`
+- **Education**: `utils/data/educations.js`
+
+### Adding Translations
+
+The portfolio supports multiple languages. See [docs/I18N.md](docs/I18N.md) for detailed internationalization documentation.
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with Turbopack |
+| `npm run build` | Build for production |
+| `npm start` | Start production server |
+| `npm run lint` | Run ESLint |
+| `npm run format` | Format code with Prettier |
+| `npm test` | Run tests |
+| `npm run test:coverage` | Generate test coverage report |
+
+## 🏗️ Project Structure
 
 ```
-├── app/                  # Next.js App Router pages and layouts
-│   ├── api/             # API routes
-│   ├── blog/            # Blog section
-│   ├── components/      # Page-specific components
-│   ├── assets/          # Static assets
-│   └── css/             # Global styles
-├── public/              # Public assets (images, icons, PDF resume)
-├── utils/               # Utility functions and helpers
+├── app/                    # Next.js App Router
+│   ├── api/               # API routes (contact form, etc.)
+│   ├── components/        # React components
+│   │   ├── homepage/     # Homepage sections
+│   │   └── helper/       # Utility components
+│   ├── blog/             # Blog section
+│   └── page.js           # Main page
+├── public/               # Static assets
+├── utils/                # Utility functions and data
+│   ├── data/            # Portfolio content data
+│   └── i18n/            # Internationalization
 ├── docs/                # Documentation
-└── package.json         # Project dependencies and scripts
+└── package.json         # Dependencies and scripts
 ```
 
+## 🛠️ Tech Stack
+
+**Framework**: Next.js 15 (App Router), React 19  
+**Styling**: Tailwind CSS, Sass  
+**Animations**: Lottie, Framer Motion  
+**Forms**: Nodemailer, reCAPTCHA  
+**Testing**: Jest, React Testing Library  
+**Deployment**: Docker, Vercel-ready
+
+## 📚 Documentation
+
+- [Internationalization Guide](docs/I18N.md) - Adding and managing translations
+- [License](LICENSE) - MIT License details
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 💬 Get Help
+
+- **Issues**: [GitHub Issues](https://github.com/ThomsMTZ/website/issues)
+- **Email**: thomas-martinez@live.fr
+- **LinkedIn**: [Thomas Martinez](https://www.linkedin.com/in/thomas-martinez-4858b3194/)
+
+## 👤 Author
+
+**Thomas Martinez**  
+Software Engineer & Scrum Master
+
+- GitHub: [@ThomsMTZ](https://github.com/ThomsMTZ)
+- LinkedIn: [Thomas Martinez](https://www.linkedin.com/in/thomas-martinez-4858b3194/)
+- Portfolio: [View Live Demo](https://github.com/ThomsMTZ/website)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ---
 
-## 📄 Featured Projects
-
-Each project showcased in the portfolio includes:
-- Project objectives and goals
-- Technologies and tools used
-- My role and contributions
-- Links to source code and live demos (when available)
-
----
-
-## 🧪 Testing
-
-The project includes comprehensive test coverage using Jest and React Testing Library:
-
-```bash
-# Run all tests
-npm test
-
-# Run tests in watch mode
-npm run test:watch
-
-# Generate coverage report
-npm run test:coverage
-```
-
----
-
-## 🤝 Contributing & Contact
-
-This code is open for review. Feel free to reach out for any professional inquiries through the contact page or via the resume provided.
-
----
-
-## 📝 License
-
-This project is licensed under the terms specified in the LICENSE file.
-
----
-
-**Thank you for visiting!** 🎉
+<div align="center">
+  <p>Built with ❤️ using Next.js and React</p>
+  <p>⭐ Star this repo if you find it helpful!</p>
+</div>
