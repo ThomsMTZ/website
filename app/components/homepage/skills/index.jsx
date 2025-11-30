@@ -10,6 +10,7 @@ import Marquee from "react-fast-marquee";
 
 const FONT_SIZES = ["text-xs", "text-sm", "text-base", "text-lg", "text-xl"];
 const DEFAULT_FONT_SIZE_INDEX = 1;
+const FONT_SIZE_BUTTON_CLASSES = "bg-gradient-to-r from-pink-500 to-violet-600 text-white px-4 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:from-pink-600 hover:to-violet-700";
 
 function Skills() {
   const { t } = useTranslation();
@@ -47,7 +48,7 @@ function Skills() {
         <button
           onClick={decreaseFontSize}
           disabled={fontSizeIndex === 0}
-          className="bg-gradient-to-r from-pink-500 to-violet-600 text-white px-4 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:from-pink-600 hover:to-violet-700"
+          className={FONT_SIZE_BUTTON_CLASSES}
           aria-label={t.skills.decreaseFont}
         >
           {t.skills.decreaseFont}
@@ -55,7 +56,7 @@ function Skills() {
         <button
           onClick={increaseFontSize}
           disabled={fontSizeIndex === FONT_SIZES.length - 1}
-          className="bg-gradient-to-r from-pink-500 to-violet-600 text-white px-4 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:from-pink-600 hover:to-violet-700"
+          className={FONT_SIZE_BUTTON_CLASSES}
           aria-label={t.skills.increaseFont}
         >
           {t.skills.increaseFont}
