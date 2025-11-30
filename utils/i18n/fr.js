@@ -36,6 +36,8 @@ export const fr = {
   // Skills Section
   skills: {
     title: "Compétences",
+    increaseFont: "A+",
+    decreaseFont: "A-",
   },
 
   // Experience Section

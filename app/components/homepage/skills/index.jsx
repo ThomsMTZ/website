@@ -1,14 +1,27 @@
 // @flow strict
 "use client";
 
+import { useState } from "react";
 import { skillsData } from "@/utils/data/skills";
 import { skillsImage } from "@/utils/skill-image";
 import { useTranslation } from "@/utils/i18n";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
+const FONT_SIZES = ["text-xs", "text-sm", "text-base", "text-lg", "text-xl"];
+const DEFAULT_FONT_SIZE_INDEX = 1;
+
 function Skills() {
   const { t } = useTranslation();
+  const [fontSizeIndex, setFontSizeIndex] = useState(DEFAULT_FONT_SIZE_INDEX);
+
+  const increaseFontSize = () => {
+    setFontSizeIndex((prev) => Math.min(prev + 1, FONT_SIZES.length - 1));
+  };
+
+  const decreaseFontSize = () => {
+    setFontSizeIndex((prev) => Math.max(prev - 1, 0));
+  };
 
   return (
     <div id="skills" className="relative pt-20 z-50 border-t my-12 lg:my-24 border-[#25213b]">
@@ -28,6 +41,25 @@ function Skills() {
           </span>
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
+      </div>
+
+      <div className="flex justify-center gap-4 mb-4">
+        <button
+          onClick={decreaseFontSize}
+          disabled={fontSizeIndex === 0}
+          className="bg-gradient-to-r from-pink-500 to-violet-600 text-white px-4 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:from-pink-600 hover:to-violet-700"
+          aria-label={t.skills.decreaseFont}
+        >
+          {t.skills.decreaseFont}
+        </button>
+        <button
+          onClick={increaseFontSize}
+          disabled={fontSizeIndex === FONT_SIZES.length - 1}
+          className="bg-gradient-to-r from-pink-500 to-violet-600 text-white px-4 py-2 rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:from-pink-600 hover:to-violet-700"
+          aria-label={t.skills.increaseFont}
+        >
+          {t.skills.increaseFont}
+        </button>
       </div>
 
       <div className="w-full my-12">
@@ -59,7 +91,7 @@ function Skills() {
                       className="h-full w-auto rounded-lg"
                     />
                   </div>
-                  <p className="text-white text-sm sm:text-lg">
+                  <p className={`text-white ${FONT_SIZES[fontSizeIndex]} transition-all duration-300`}>
                     {skill}
                   </p>
                 </div>
