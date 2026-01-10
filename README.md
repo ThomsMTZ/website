@@ -122,6 +122,62 @@ The portfolio supports multiple languages. See [docs/I18N.md](docs/I18N.md) for 
 - [Internationalization Guide](docs/I18N.md) - Adding and managing translations
 - [License](LICENSE) - MIT License details
 
+## 🔮 Future Improvements
+
+This project is continuously evolving. Here are some planned enhancements:
+
+- [ ] **Performance Optimization**
+  - Implement image lazy loading optimization
+  - Add service worker for offline support
+  - Optimize bundle size with code splitting
+  
+- [ ] **New Features**
+  - Add dark/light theme toggle
+  - Integrate blog CMS (e.g., Contentful or Sanity)
+  - Add project filtering and search functionality
+  - Implement visitor analytics dashboard
+  
+- [ ] **Enhanced Functionality**
+  - Add more language support (Spanish, German)
+  - Implement PDF resume download
+  - Add animations for page transitions
+  - Integrate with GitHub API to showcase live repository stats
+  
+- [ ] **Developer Experience**
+  - Add Storybook for component documentation
+  - Improve test coverage to 90%+
+  - Add E2E testing with Playwright or Cypress
+  - Set up automated dependency updates with Dependabot
+
+## 🐛 Issues History
+
+This section documents notable issues encountered during development and their solutions.
+
+### Issue #1: Initial Setup and Configuration
+**Problem**: Initial Next.js 15 setup had compatibility issues with React 19  
+**Solution**: Updated all dependencies to their latest compatible versions and configured proper peer dependencies
+
+**Date**: 2025-01  
+**Status**: ✅ Resolved
+
+### Issue #2: Docker Build Optimization
+**Problem**: Docker build times were excessively long during development  
+**Solution**: Implemented multi-stage Docker builds with proper layer caching and .dockerignore configuration
+
+**Date**: 2025-01  
+**Status**: ✅ Resolved
+
+### Issue #3: Contact Form reCAPTCHA Integration
+**Problem**: reCAPTCHA validation was failing in production environment  
+**Solution**: Updated environment variable configuration and implemented proper server-side validation
+
+**Date**: 2025-01  
+**Status**: ✅ Resolved
+
+---
+
+**Note**: For current issues and bug reports, please visit our [GitHub Issues](https://github.com/ThomsMTZ/website/issues) page.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
