@@ -9,6 +9,31 @@ A modern, responsive portfolio website built with Next.js 15 and React 19, showc
 
 ![Portfolio Preview](public/hero.svg)
 
+## 📑 Table of Contents
+
+- [Features](#-features)
+- [Demo](#-demo)
+- [Quick Start](#-quick-start)
+- [Usage](#-usage)
+- [Project Structure](#-project-structure)
+- [Tech Stack](#-tech-stack)
+- [Environment Variables](#-environment-variables)
+- [Documentation](#-documentation)
+- [Future Improvements](#-future-improvements)
+- [Issues History](#-issues-history)
+- [Contributing](#-contributing)
+- [FAQ](#-faq)
+- [Support](#-support)
+- [Authors](#-author)
+- [Acknowledgments](#-acknowledgments)
+- [License](#-license)
+
+## 🌐 Demo
+
+Visit the live demo: **[Coming Soon]**
+
+> **Note**: This portfolio can be easily deployed to Vercel, Netlify, or any platform supporting Next.js applications.
+
 ## ✨ Features
 
 - 🎨 **Modern UI/UX** - Clean, responsive design with smooth animations using Lottie and Framer Motion
@@ -117,6 +142,29 @@ The portfolio supports multiple languages. See [docs/I18N.md](docs/I18N.md) for 
 **Testing**: Jest, React Testing Library  
 **Deployment**: Docker, Vercel-ready
 
+## 🔐 Environment Variables
+
+To run this project, you may need to set up the following environment variables:
+
+Create a `.env.local` file in the root directory and add:
+
+```env
+# Email Configuration (for contact form)
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+
+# reCAPTCHA (for contact form protection)
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_recaptcha_site_key
+RECAPTCHA_SECRET_KEY=your_recaptcha_secret_key
+
+# Email Service (Nodemailer)
+EMAIL_USER=your_email@example.com
+EMAIL_PASS=your_email_password
+```
+
+> **Note**: These variables are optional. The portfolio will work without them, but the contact form functionality will be limited.
+
 ## 📚 Documentation
 
 - [Internationalization Guide](docs/I18N.md) - Adding and managing translations
@@ -188,11 +236,52 @@ Contributions are welcome! Feel free to:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 💬 Get Help
+Please make sure to:
+- Follow the existing code style and conventions
+- Update documentation as needed
+- Add tests for new features
+- Ensure all tests pass before submitting
 
-- **Issues**: [GitHub Issues](https://github.com/ThomsMTZ/website/issues)
-- **Email**: thomas-martinez@live.fr
-- **LinkedIn**: [Thomas Martinez](https://www.linkedin.com/in/thomas-martinez-4858b3194/)
+## ❓ FAQ
+
+### How do I customize the portfolio content?
+
+Edit the data files in `utils/data/` directory. Each file contains specific content:
+- `personal-data.js` - Your personal information
+- `projects-data.js` - Your projects portfolio
+- `skills.js` - Your technical skills
+- `experience.js` - Your work experience
+- `educations.js` - Your educational background
+
+### Can I use this template for my own portfolio?
+
+Yes! This project is MIT licensed. Feel free to fork and customize it for your own use.
+
+### How do I add a new language?
+
+See the [Internationalization Guide](docs/I18N.md) for detailed instructions on adding new languages.
+
+### The contact form isn't working. What should I do?
+
+Make sure you've set up the required environment variables for EmailJS and reCAPTCHA. See the [Environment Variables](#-environment-variables) section.
+
+### How do I deploy this to Vercel?
+
+1. Push your code to GitHub
+2. Import your repository in Vercel
+3. Configure environment variables
+4. Deploy!
+
+Vercel will automatically detect Next.js and configure the build settings.
+
+## 💬 Support
+
+Need help? Here are several ways to get support:
+
+- **Issues**: [GitHub Issues](https://github.com/ThomsMTZ/website/issues) - Report bugs or request features
+- **Discussions**: [GitHub Discussions](https://github.com/ThomsMTZ/website/discussions) - Ask questions and share ideas
+- **Email**: thomas-martinez@live.fr - Direct contact for specific inquiries
+- **LinkedIn**: [Thomas Martinez](https://www.linkedin.com/in/thomas-martinez-4858b3194/) - Professional networking
 
 ## 👤 Author
 
@@ -202,6 +291,17 @@ Software Engineer & Scrum Master
 - GitHub: [@ThomsMTZ](https://github.com/ThomsMTZ)
 - LinkedIn: [Thomas Martinez](https://www.linkedin.com/in/thomas-martinez-4858b3194/)
 - Portfolio: [View Live Demo](https://github.com/ThomsMTZ/website)
+
+## 🙏 Acknowledgments
+
+Special thanks to:
+
+- **Next.js Team** - For the amazing React framework
+- **Vercel** - For excellent deployment platform and hosting
+- **Open Source Community** - For the incredible tools and libraries used in this project
+- **FreeCodeCamp** - For README best practices and web development resources
+
+Inspired by modern portfolio designs and best practices from the developer community.
 
 ## 📄 License
 
