@@ -71,6 +71,21 @@ const ProjectCard = ({ project }) => {
               <span className="text-gray-400">{`',`}</span>
             </div>
           )}
+          {project.demo && (
+            <div className="ml-4 lg:ml-8 mr-2">
+              <span className="text-white">demo:</span>
+              <span className="text-gray-400">{` '`}</span>
+              <Link
+                href={project.demo}
+                target="_blank"
+                rel="noreferrer"
+                className="text-pink-400 underline hover:text-pink-300 transition-colors"
+              >
+                {project.demo}
+              </Link>
+              <span className="text-gray-400">{`',`}</span>
+            </div>
+          )}
           <div>
             <span className="text-gray-400">{`};`}</span>
           </div>

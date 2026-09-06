@@ -80,6 +80,16 @@ export const fr = {
       },
       {
         id: 2,
+        name: 'TechJobsRadar API',
+        description:
+          "Écosystème automatisé d'agrégation d'offres d'emploi tech et freelance, conçu pour explorer le cycle complet de mise en ligne d'une API REST en production, l'automatisation CI/CD avec GitHub Actions et l'hébergement d'une interface web sur GitHub Pages. Développé avec Python et FastAPI pour filtrer les opportunités selon des critères personnalisés, il intègre des workflows GitHub Actions planifiés par cron horaire (scraping automatique et auto-commit dans le dépôt), des alertes Telegram ciblées par forum topics, ainsi qu'une vitrine web déployée sur GitHub Pages.",
+        tools: ['Python', 'FastAPI', 'GitHub Actions', 'GitHub Pages', 'API REST', 'Telegram API', 'TailwindCSS'],
+        role: 'Ingénieur Backend & DevOps',
+        code: 'https://github.com/ThomsMTZ/MakingMoney',
+        demo: 'https://thomsmtz.github.io/MakingMoney/',
+      },
+      {
+        id: 3,
         name: 'Tutoriel Expo React Native',
         description:
           "L'objectif principal est de maîtriser les fondamentaux de React Native et du framework Expo afin de pouvoir construire ma propre application par la suite. Ce tutoriel a été très enrichissant et m'a permis de comprendre les subtilités du framework.",

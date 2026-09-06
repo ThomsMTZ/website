@@ -11,6 +11,16 @@ export const projectsData = [
   },
   {
     id: 2,
+    name: 'TechJobsRadar API',
+    description:
+      'Automated tech and freelance job aggregation ecosystem developed to explore the full lifecycle of publishing a production REST API, implementing CI/CD pipelines with GitHub Actions, and hosting interactive web apps via GitHub Pages. Powered by FastAPI with multi-criteria filtering, scheduled hourly cron workflows with self-updating data catalogues, Telegram Bot API notification routing with forum topics, and deployment configurations for Render and RapidAPI.',
+    tools: ['Python', 'FastAPI', 'GitHub Actions', 'GitHub Pages', 'REST API', 'Telegram API', 'TailwindCSS'],
+    role: 'Backend & DevOps Engineer',
+    code: 'https://github.com/ThomsMTZ/MakingMoney',
+    demo: 'https://thomsmtz.github.io/MakingMoney/',
+  },
+  {
+    id: 3,
     name: 'Expo React native Tutorial',
     description:
       'The main objective is to master the fundamentals of React Native and the Expo framework in order to be able to build my own application afterwards. This tutorial has been very enriching and has allowed me to understand the subtleties of the framework.',
