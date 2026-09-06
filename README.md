@@ -24,29 +24,33 @@ A modern, responsive portfolio website built with Next.js 15 and React 19, showc
 ### Prerequisites
 
 Ensure you have the following installed:
+
 - **Node.js** >= 18.18
 - **npm** >= 9 (or yarn/pnpm)
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/ThomsMTZ/website.git
    cd website
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Run the development server**
+
    ```bash
    npm run dev
    ```
 
 4. **Open your browser**
-   
+
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ### Docker Setup
@@ -80,15 +84,15 @@ The portfolio supports multiple languages. See [docs/I18N.md](docs/I18N.md) for 
 
 ### Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server with Turbopack |
-| `npm run build` | Build for production |
-| `npm start` | Start production server |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format code with Prettier |
-| `npm test` | Run tests |
-| `npm run test:coverage` | Generate test coverage report |
+| Command                 | Description                             |
+| ----------------------- | --------------------------------------- |
+| `npm run dev`           | Start development server with Turbopack |
+| `npm run build`         | Build for production                    |
+| `npm start`             | Start production server                 |
+| `npm run lint`          | Run ESLint                              |
+| `npm run format`        | Format code with Prettier               |
+| `npm test`              | Run tests                               |
+| `npm run test:coverage` | Generate test coverage report           |
 
 ## 🏗️ Project Structure
 

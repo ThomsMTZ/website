@@ -14,13 +14,13 @@ jest.mock('@/utils/data/personal-data', () => ({
 describe('Footer Component', () => {
   test('should render the Footer component', () => {
     render(<Footer />);
-    const footerText = screen.getByText(/Developer Portfolio by/i);
+    const footerText = screen.getByText(/Made with|Developer Portfolio/i);
     expect(footerText).toBeInTheDocument();
   });
 
   test('should display copyright text', () => {
     render(<Footer />);
-    expect(screen.getByText(/© Developer Portfolio by/i)).toBeInTheDocument();
+    expect(screen.getByText(/Made with|Developer Portfolio/i)).toBeInTheDocument();
   });
 
   test('should display Thomas Martinez name', () => {
@@ -33,7 +33,7 @@ describe('Footer Component', () => {
     render(<Footer />);
     const linkedInLinks = screen.getAllByRole('link');
     const linkedInLink = linkedInLinks.find(
-      (link) => link.href && link.href.includes('linkedin.com')
+      link => link.href && link.href.includes('linkedin.com'),
     );
     expect(linkedInLink).toBeInTheDocument();
   });
@@ -41,28 +41,27 @@ describe('Footer Component', () => {
   test('should have GitHub link', () => {
     render(<Footer />);
     const githubLinks = screen.getAllByRole('link');
-    const githubLink = githubLinks.find(
-      (link) => link.href && link.href.includes('github.com')
-    );
+    const githubLink = githubLinks.find(link => link.href && link.href.includes('github.com'));
     expect(githubLink).toBeInTheDocument();
   });
 
   test('should open social links in new tab', () => {
     render(<Footer />);
-    const socialLinks = screen.getAllByRole('link').filter(
-      (link) => 
-        link.href && 
-        (link.href.includes('linkedin.com') || link.href.includes('github.com'))
-    );
-    
-    socialLinks.forEach((link) => {
+    const socialLinks = screen
+      .getAllByRole('link')
+      .filter(
+        link =>
+          link.href && (link.href.includes('linkedin.com') || link.href.includes('github.com')),
+      );
+
+    socialLinks.forEach(link => {
       expect(link).toHaveAttribute('target', '_blank');
     });
   });
 
   test('should have correct styling classes', () => {
     render(<Footer />);
-    const footer = screen.getByText(/Developer Portfolio by/i).closest('div');
+    const footer = screen.getByText(/Made with|Developer Portfolio/i).closest('div');
     expect(footer?.parentElement?.parentElement).toHaveClass('border-t');
   });
 

@@ -7,9 +7,9 @@ describe('GlowCard Component', () => {
     render(
       <GlowCard identifier="test">
         <div>Test Content</div>
-      </GlowCard>
+      </GlowCard>,
     );
-    
+
     expect(screen.getByText('Test Content')).toBeInTheDocument();
   });
 
@@ -18,9 +18,9 @@ describe('GlowCard Component', () => {
       <GlowCard identifier="test-children">
         <h1>Title</h1>
         <p>Description</p>
-      </GlowCard>
+      </GlowCard>,
     );
-    
+
     expect(screen.getByText('Title')).toBeInTheDocument();
     expect(screen.getByText('Description')).toBeInTheDocument();
   });
@@ -29,9 +29,9 @@ describe('GlowCard Component', () => {
     const { container } = render(
       <GlowCard identifier="unique-id">
         <div>Content</div>
-      </GlowCard>
+      </GlowCard>,
     );
-    
+
     const glowContainer = container.querySelector('.glow-container-unique-id');
     expect(glowContainer).toBeInTheDocument();
   });
@@ -40,9 +40,9 @@ describe('GlowCard Component', () => {
     const { container } = render(
       <GlowCard identifier="card-id">
         <div>Content</div>
-      </GlowCard>
+      </GlowCard>,
     );
-    
+
     const glowCard = container.querySelector('.glow-card-card-id');
     expect(glowCard).toBeInTheDocument();
   });
@@ -51,9 +51,9 @@ describe('GlowCard Component', () => {
     const { container } = render(
       <GlowCard identifier="style-test">
         <div>Content</div>
-      </GlowCard>
+      </GlowCard>,
     );
-    
+
     const article = container.querySelector('article');
     expect(article).toHaveClass('glow-card', 'cursor-pointer', 'border', 'rounded-xl');
   });
@@ -62,9 +62,9 @@ describe('GlowCard Component', () => {
     const { container } = render(
       <GlowCard identifier="glows-test">
         <div>Content</div>
-      </GlowCard>
+      </GlowCard>,
     );
-    
+
     const glowsElement = container.querySelector('.glows');
     expect(glowsElement).toBeInTheDocument();
   });
@@ -73,46 +73,46 @@ describe('GlowCard Component', () => {
     const { container: container1 } = render(
       <GlowCard identifier="id1">
         <div>Content 1</div>
-      </GlowCard>
+      </GlowCard>,
     );
-    
+
     const { container: container2 } = render(
       <GlowCard identifier="id2">
         <div>Content 2</div>
-      </GlowCard>
+      </GlowCard>,
     );
-    
+
     expect(container1.querySelector('.glow-container-id1')).toBeInTheDocument();
     expect(container2.querySelector('.glow-container-id2')).toBeInTheDocument();
   });
 
   test('should register pointermove event listener', () => {
     const addEventListenerSpy = jest.spyOn(document.body, 'addEventListener');
-    
+
     render(
       <GlowCard identifier="event-test">
         <div>Content</div>
-      </GlowCard>
+      </GlowCard>,
     );
-    
+
     expect(addEventListenerSpy).toHaveBeenCalledWith('pointermove', expect.any(Function));
-    
+
     addEventListenerSpy.mockRestore();
   });
 
   test('should remove event listener on unmount', () => {
     const removeEventListenerSpy = jest.spyOn(document.body, 'removeEventListener');
-    
+
     const { unmount } = render(
       <GlowCard identifier="unmount-test">
         <div>Content</div>
-      </GlowCard>
+      </GlowCard>,
     );
-    
+
     unmount();
-    
+
     expect(removeEventListenerSpy).toHaveBeenCalledWith('pointermove', expect.any(Function));
-    
+
     removeEventListenerSpy.mockRestore();
   });
 
@@ -120,15 +120,15 @@ describe('GlowCard Component', () => {
     const { container } = render(
       <GlowCard identifier="pointer-test">
         <div>Content</div>
-      </GlowCard>
+      </GlowCard>,
     );
-    
+
     const card = container.querySelector('.glow-card-pointer-test');
     expect(card).toBeInTheDocument();
-    
+
     // Simulate pointer move
     fireEvent.pointerMove(document.body, { clientX: 100, clientY: 100 });
-    
+
     // Card should still be in the document after event
     expect(card).toBeInTheDocument();
   });

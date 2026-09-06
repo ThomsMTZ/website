@@ -1,22 +1,68 @@
-import { GoogleTagManager } from "@next/third-parties/google";
-import { Inter } from "next/font/google";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Footer from "./components/footer";
-import ScrollToTop from "./components/helper/scroll-to-top";
-import Navbar from "./components/navbar";
-import "./css/card.scss";
-import "./css/globals.scss";
-import { I18nProvider } from "@/utils/i18n";
-const inter = Inter({ subsets: ["latin"] });
+import { GoogleTagManager } from '@next/third-parties/google';
+import { Inter } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Footer from './components/footer';
+import ScrollToTop from './components/helper/scroll-to-top';
+import Navbar from './components/navbar';
+import './css/card.scss';
+import './css/globals.scss';
+import { I18nProvider } from '@/utils/i18n';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "Portfolio of Thomas Martinez - Software Developer",
+  metadataBase: new URL('https://thomsmtz.dev'),
+  title: 'Thomas Martinez — Software Engineer & Scrum Master',
   description:
-    "This is the portfolio of Thomas Martinez. I am a full stack developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.",
+    'Portfolio of Thomas Martinez, a Software Engineer and certified Scrum Master with expertise in React, Next.js, Java, Spring, TypeScript, Docker and AWS. Based in Lyon, France.',
+  keywords: [
+    'Thomas Martinez',
+    'Software Engineer',
+    'Scrum Master',
+    'Full Stack Developer',
+    'React',
+    'Next.js',
+    'Java',
+    'Spring Boot',
+    'TypeScript',
+    'Docker',
+    'AWS',
+    'Lyon',
+    'France',
+    'portfolio',
+  ],
+  authors: [{ name: 'Thomas Martinez', url: 'https://thomsmtz.dev' }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://thomsmtz.dev',
+    title: 'Thomas Martinez — Software Engineer & Scrum Master',
+    description:
+      'Portfolio of Thomas Martinez, a Software Engineer and certified Scrum Master. Expertise in React, Next.js, Java, TypeScript, Docker and AWS.',
+    siteName: 'Thomas Martinez Portfolio',
+    images: [
+      {
+        url: '/card.png',
+        width: 1200,
+        height: 630,
+        alt: 'Thomas Martinez — Software Engineer & Scrum Master',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Thomas Martinez — Software Engineer & Scrum Master',
+    description: 'Portfolio of Thomas Martinez, a Software Engineer and certified Scrum Master.',
+    images: ['/card.png'],
+  },
 };
 
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -33,4 +79,6 @@ export default function RootLayout({ children }) {
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
     </html>
   );
-}
+};
+
+export default RootLayout;

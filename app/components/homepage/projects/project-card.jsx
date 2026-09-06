@@ -1,9 +1,7 @@
-// @flow strict
+import React from 'react';
+import Link from 'next/link';
 
-import * as React from 'react';
-
-function ProjectCard({ project }) {
-
+const ProjectCard = ({ project }) => {
   return (
     <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
       <div className="flex flex-row">
@@ -16,7 +14,7 @@ function ProjectCard({ project }) {
           <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400"></div>
           <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200"></div>
         </div>
-        <p className="text-center ml-3 text-[#16f2b3] text-base lg:text-xl">
+        <p className="text-center ml-3 text-[#16f2b3] text-base lg:text-xl font-medium">
           {project.name}
         </p>
       </div>
@@ -36,20 +34,17 @@ function ProjectCard({ project }) {
           </div>
 
           <div className="ml-4 lg:ml-8 mr-2">
-            <span className=" text-white">tools:</span>
+            <span className="text-white">tools:</span>
             <span className="text-gray-400">{` ['`}</span>
-            {
-              project.tools.map((tag, i) => (
-                <React.Fragment key={i}>
-                  <span className="text-amber-300">{tag}</span>
-                  {
-                    project.tools?.length - 1 !== i &&
-                    <span className="text-gray-400">{`', '`}</span>
-                  }
-                </React.Fragment>
-              ))
-            }
-            <span className="text-gray-400">{"],"}</span>
+            {project.tools.map((tag, index) => (
+              <span key={`tool-${tag}`}>
+                <span className="text-amber-300">{tag}</span>
+                {index < project.tools.length - 1 && (
+                  <span className="text-gray-400">{`', '`}</span>
+                )}
+              </span>
+            ))}
+            <span className="text-gray-400">{'],'}</span>
           </div>
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">myRole:</span>
@@ -61,7 +56,24 @@ function ProjectCard({ project }) {
             <span className="text-cyan-400">{' ' + project.description}</span>
             <span className="text-gray-400">,</span>
           </div>
-          <div><span className="text-gray-400">{`};`}</span></div>
+          {project.code && (
+            <div className="ml-4 lg:ml-8 mr-2">
+              <span className="text-white">code:</span>
+              <span className="text-gray-400">{` '`}</span>
+              <Link
+                href={project.code}
+                target="_blank"
+                rel="noreferrer"
+                className="text-pink-400 underline hover:text-pink-300 transition-colors"
+              >
+                {project.code}
+              </Link>
+              <span className="text-gray-400">{`',`}</span>
+            </div>
+          )}
+          <div>
+            <span className="text-gray-400">{`};`}</span>
+          </div>
         </code>
       </div>
     </div>

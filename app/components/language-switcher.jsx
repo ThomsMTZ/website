@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useTranslation } from '@/utils/i18n';
 
@@ -7,7 +7,7 @@ function LanguageSwitcher() {
 
   return (
     <div className="flex items-center gap-2">
-      {supportedLanguages.map((lang) => (
+      {supportedLanguages.map(lang => (
         <button
           key={lang}
           onClick={() => changeLanguage(lang)}

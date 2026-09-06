@@ -1,5 +1,5 @@
-import axios from "axios";
-import { NextResponse } from "next/server";
+import axios from 'axios';
+import { NextResponse } from 'next/server';
 
 export async function POST(request) {
   const reqBody = await request.json();
@@ -11,19 +11,25 @@ export async function POST(request) {
     const res = await axios.post(url);
     if (res.data.success) {
       return NextResponse.json({
-        message: "Captcha verification success!!",
+        message: 'Captcha verification success!!',
         success: true,
-      })
-    };
+      });
+    }
 
-    return NextResponse.json({
-      error: "Captcha verification failed!",
-      success: false,
-    }, { status: 500 });
+    return NextResponse.json(
+      {
+        error: 'Captcha verification failed!',
+        success: false,
+      },
+      { status: 500 },
+    );
   } catch (error) {
-    return NextResponse.json({
-      error: "Captcha verification failed!",
-      success: false,
-    }, { status: 500 });
+    return NextResponse.json(
+      {
+        error: 'Captcha verification failed!',
+        success: false,
+      },
+      { status: 500 },
+    );
   }
-};
+}

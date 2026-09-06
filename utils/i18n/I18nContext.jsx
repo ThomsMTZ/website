@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { translations, defaultLanguage, supportedLanguages } from './translations';
@@ -23,7 +23,7 @@ export function I18nProvider({ children }) {
     }
   }, []);
 
-  const changeLanguage = (newLanguage) => {
+  const changeLanguage = newLanguage => {
     if (supportedLanguages.includes(newLanguage)) {
       setLanguage(newLanguage);
       localStorage.setItem('language', newLanguage);
@@ -39,11 +39,7 @@ export function I18nProvider({ children }) {
     supportedLanguages,
   };
 
-  return (
-    <I18nContext.Provider value={value}>
-      {children}
-    </I18nContext.Provider>
-  );
+  return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }
 
 export function useTranslation() {

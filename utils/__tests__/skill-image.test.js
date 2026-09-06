@@ -60,7 +60,7 @@ describe('skillsImage', () => {
     const resultLower = skillsImage('docker');
     const resultUpper = skillsImage('DOCKER');
     const resultMixed = skillsImage('Docker');
-    
+
     expect(resultLower).toBeDefined();
     expect(resultUpper).toBeDefined();
     expect(resultMixed).toBeDefined();
@@ -79,7 +79,7 @@ describe('skillsImage', () => {
   test('should handle .NET skills', () => {
     const resultDotNet = skillsImage('.NET');
     const resultDotNetCore = skillsImage('.NET Core');
-    
+
     expect(resultDotNet).toBeDefined();
     expect(resultDotNetCore).toBeDefined();
   });

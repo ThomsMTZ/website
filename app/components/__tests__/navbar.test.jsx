@@ -23,7 +23,7 @@ describe('Navbar Component', () => {
 
   test('should render all navigation links', () => {
     render(<Navbar />);
-    
+
     expect(screen.getByText('ABOUT')).toBeInTheDocument();
     expect(screen.getByText('EXPERIENCE')).toBeInTheDocument();
     expect(screen.getByText('SKILLS')).toBeInTheDocument();
@@ -73,9 +73,9 @@ describe('Navbar Component', () => {
     expect(navList).toBeInTheDocument();
   });
 
-  test('should have 5 navigation items', () => {
+  test('should have 5 navigation items and 1 language switcher', () => {
     render(<Navbar />);
     const navItems = screen.getAllByRole('listitem');
-    expect(navItems).toHaveLength(5);
+    expect(navItems).toHaveLength(6);
   });
 });
