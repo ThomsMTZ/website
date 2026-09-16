@@ -31,7 +31,7 @@ export const en = {
     title: 'ABOUT ME',
     heading: 'Who I am?',
     description:
-      'I am a software engineer with a passion for problem-solving and continuous learning. I have experience in various technologies and enjoy working on challenging projects that push my limits. I am also a certified Scrum Master, which allows me to effectively lead teams and ensure successful project delivery.',
+      'Senior Full-Stack Software Engineer & Certified Scrum Master (PSM I) with 6+ years of experience architecting mission-critical systems, national biometric platforms (Thales CABIS), and high-throughput reactive microservices (Tricentis NeoLoad). Proven expertise in Java 17/21, Vert.x, PostgreSQL, TypeScript, and React, combined with strong agile servant leadership to drive delivery velocity (+31%) and team well-being.',
   },
 
   // Skills Section
@@ -45,21 +45,33 @@ export const en = {
     list: [
       {
         id: 1,
-        title: 'Software Engineer (FullStack, Scrum Master)',
-        company: 'Tricentis, France',
-        duration: '(Oct 2020 - March 2025)',
+        title: 'Senior FullStack Software Engineer (CABIS Biometrics)',
+        company: 'Thales DIS (Gemalto)',
+        duration: '(March 2026 - Present)',
       },
       {
         id: 2,
-        title: 'Volunteer Intervention Leader',
-        company: 'French Red Cross',
-        duration: '(Nov 2022 – Now)',
+        title: 'Tech Lead & Scrum Master (AMS Department)',
+        company: 'Thales',
+        duration: '(June 2025 - Feb 2026)',
       },
       {
         id: 3,
-        title: 'Software Engineer (FullStack, Scrum Master)',
-        company: 'Thales, Roumania',
-        duration: '(May 2025 - Present)',
+        title: 'Software Engineer R&D (NeoLoad) & Scrum Master',
+        company: 'Tricentis, France',
+        duration: '(Oct 2020 - May 2025)',
+      },
+      {
+        id: 4,
+        title: 'Volunteer Intervention Leader',
+        company: 'French Red Cross',
+        duration: '(Nov 2020 – Present)',
+      },
+      {
+        id: 5,
+        title: 'BI Developer Intern',
+        company: 'Syntell, Canada',
+        duration: '(March 2020 - July 2020)',
       },
     ],
   },

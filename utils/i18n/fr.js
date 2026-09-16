@@ -31,7 +31,7 @@ export const fr = {
     title: 'À PROPOS DE MOI',
     heading: 'Qui suis-je ?',
     description:
-      "Je suis un ingénieur logiciel passionné par la résolution de problèmes et l'apprentissage continu. J'ai de l'expérience dans diverses technologies et j'aime travailler sur des projets stimulants qui repoussent mes limites. Je suis également un Scrum Master certifié, ce qui me permet de diriger efficacement des équipes et d'assurer la réussite de la livraison des projets.",
+      "Ingénieur Logiciel Senior Full-Stack & Scrum Master Certifié (PSM I) avec plus de 6 ans d'expérience dans la conception d'architectures critiques, de systèmes biométriques nationaux (Thales CABIS) et de microservices réactifs haute performance (Tricentis NeoLoad). Maîtrise éprouvée de Java 17/21, Vert.x, PostgreSQL, TypeScript et React, alliée à un leadership agile serviteur pour propulser la vélocité (+31%) et la cohésion d'équipe.",
   },
 
   // Skills Section
@@ -45,21 +45,33 @@ export const fr = {
     list: [
       {
         id: 1,
-        title: 'Ingénieur Logiciel (FullStack, Scrum Master)',
-        company: 'Tricentis, France',
-        duration: '(Oct 2020 - Mars 2025)',
+        title: 'Ingénieur Logiciel Senior FullStack (Biométrie CABIS)',
+        company: 'Thales DIS (Gemalto)',
+        duration: '(Mars 2026 - Présent)',
       },
       {
         id: 2,
-        title: "Chef d'Intervention Bénévole",
-        company: 'Croix-Rouge Française',
-        duration: "(Nov 2022 – Aujourd'hui)",
+        title: 'Tech Lead & Scrum Master (Département AMS)',
+        company: 'Thales',
+        duration: '(Juin 2025 - Fév 2026)',
       },
       {
         id: 3,
-        title: 'Ingénieur Logiciel (FullStack, Scrum Master)',
-        company: 'Thales, Roumanie',
-        duration: '(Mai 2025 - Présent)',
+        title: 'Ingénieur Logiciel R&D (NeoLoad) & Scrum Master',
+        company: 'Tricentis, France',
+        duration: '(Oct 2020 - Mai 2025)',
+      },
+      {
+        id: 4,
+        title: "Chef d'Intervention Bénévole",
+        company: 'Croix-Rouge Française',
+        duration: "(Nov 2020 – Présent)",
+      },
+      {
+        id: 5,
+        title: 'Stagiaire Développeur BI',
+        company: 'Syntell, Canada',
+        duration: '(Mars 2020 - Juil 2020)',
       },
     ],
   },
