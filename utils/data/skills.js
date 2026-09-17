@@ -3,6 +3,7 @@ export const skillsData = [
   'PostgreSQL',
   'Docker',
   'Kubernetes',
+  'RabbitMQ',
   'Typescript',
   'Javascript',
   'React',
