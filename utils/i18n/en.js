@@ -1,170 +1,148 @@
 export const en = {
-  // Navbar
   navbar: {
-    about: 'ABOUT',
-    experience: 'EXPERIENCE',
-    skills: 'SKILLS',
-    projects: 'PROJECTS',
-    education: 'EDUCATION',
+    overview: 'Overview',
+    impact: 'Impact',
+    works: 'Selected Works',
+    leadership: 'Agile & Leadership',
+    career: 'Career',
+    contact: 'Contact',
+    resume: 'Resume',
+    available: 'Available for Senior / Lead / Manager roles',
   },
 
-  // Hero Section
   hero: {
-    greeting: 'Hello,',
-    thisIs: 'This is',
-    professional: "I'm a Professional",
-    contactMe: 'Contact me',
-    getResume: 'Get Resume',
-    coder: {
-      name: 'name:',
-      skills: 'skills:',
-      hardWorker: 'hardWorker:',
-      quickLearner: 'quickLearner:',
-      problemSolver: 'problemSolver:',
-      hireable: 'hireable:',
-      returnStatement: 'return',
+    statusBadge: 'Senior Software Engineer • Certified Scrum Master (PSM I)',
+    titlePrefix: 'Architecting mission-critical platforms.',
+    titleHighlight: 'Empowering engineering teams.',
+    description:
+      '6+ years of experience delivering national biometric systems at Thales, high-throughput reactive engines at Tricentis, and data-driven SaaS platforms. Blending technical rigor with servant leadership to drive delivery velocity (+31%) and team empowerment.',
+    ctaPrimary: 'Explore Selected Works',
+    ctaSecondary: 'Download CV',
+    location: 'Marseille, France • Remote-friendly',
+    stats: {
+      experience: 'Years Experience',
+      velocity: 'Sprint Velocity Gain',
+      scale: 'National Scale Systems',
+      cert: 'Certified PSM I',
     },
   },
 
-  // About Section
-  about: {
-    title: 'ABOUT ME',
-    heading: 'Who I am?',
-    description:
-      'Senior Full-Stack Software Engineer & Certified Scrum Master (PSM I) with 6+ years of experience architecting mission-critical systems, national biometric platforms (Thales CABIS), and high-throughput reactive microservices (Tricentis NeoLoad). Proven expertise in Java 17/21, Vert.x, PostgreSQL, TypeScript, and React, combined with strong agile servant leadership to drive delivery velocity (+31%) and team well-being.',
+  bento: {
+    tag: 'IMPACT & LEADERSHIP',
+    title: 'Engineered for resilience, structured for delivery.',
+    subtitle: 'Where deep systems craft meets human-centered agile leadership.',
+    card1: {
+      badge: 'MISSION-CRITICAL CRAFT',
+      metric: 'Zero-Failure',
+      title: 'National Biometric Scale',
+      description:
+        'Architecting distributed reactive services for Thales CABIS platforms. Processing sovereign identity databases with strict consistency and sub-second matching.',
+    },
+    card2: {
+      badge: 'AGILE TRANSFORMATION',
+      metric: '+31%',
+      title: 'Team Velocity Increase',
+      description:
+        'Certified Scrum Master (PSM I) eliminating friction, clarifying user stories, and building psychological safety to accelerate sprint velocity without burn-out.',
+    },
+    card3: {
+      badge: 'HIGH CONCURRENCY',
+      metric: 'Reactive',
+      title: 'High-Throughput Microservices',
+      description:
+        '4.5 years developing Tricentis NeoLoad performance testing engines with Java 17/21, Vert.x, and event-driven patterns under high concurrency.',
+    },
+    card4: {
+      badge: 'CRISIS LEADERSHIP',
+      metric: 'Field Ops',
+      title: 'Emergency Intervention Leader',
+      description:
+        'Volunteer Intervention Leader at the French Red Cross. Tactical triage, crisis management under stress, and decisive team coordination transferred into engineering.',
+    },
   },
 
-  // Skills Section
-  skills: {
-    title: 'Skills',
-  },
-
-  // Experience Section
-  experience: {
-    title: 'Experiences',
-    list: [
-      {
-        id: 1,
-        title: 'Senior FullStack Software Engineer (CABIS Biometrics)',
-        company: 'Thales DIS (Gemalto)',
-        duration: '(March 2026 - Present)',
-      },
-      {
-        id: 2,
-        title: 'Tech Lead & Scrum Master (AMS Department)',
-        company: 'Thales',
-        duration: '(June 2025 - Feb 2026)',
-      },
-      {
-        id: 3,
-        title: 'Software Engineer R&D (NeoLoad) & Scrum Master',
-        company: 'Tricentis, France',
-        duration: '(Oct 2020 - May 2025)',
-      },
-      {
-        id: 4,
-        title: 'Volunteer Intervention Leader',
-        company: 'French Red Cross',
-        duration: '(Nov 2020 – Present)',
-      },
-      {
-        id: 5,
-        title: 'BI Developer Intern',
-        company: 'Syntell, Canada',
-        duration: '(March 2020 - July 2020)',
-      },
-    ],
-  },
-
-  // Projects Section
   projects: {
-    title: 'PROJECTS',
-    viewMore: 'View More',
-    list: [
-      {
-        id: 1,
-        name: 'LedScroller2025',
-        description:
-          'Cross-platform mobile application (iOS, Android, Web) simulating an authentic retro neon LED scrolling display. Engineered with Expo SDK 54 and React Native 0.81. Built with modular architecture: silky-smooth 60fps animations powered by Reanimated 4 (native Worklets), complex gesture handling (pinch-to-zoom dynamic text resizing and double-tap via Gesture Handler v2), LED grid overlay shaders, rainbow color pickers, i18n localization (EN/FR/ES), and AsyncStorage persistence. Engineered to enterprise standards with 92% test coverage verified by SonarCloud Quality Gate.',
-        tools: ['React Native', 'Expo', 'TypeScript', 'Reanimated', 'Gesture Handler', 'SonarCloud'],
-        role: 'Mobile Developer',
-        code: 'https://github.com/ThomsMTZ/LedScroller2025',
-      },
-      {
-        id: 2,
-        name: 'TechJobsRadar API',
-        description:
-          'Automated tech and freelance job aggregation ecosystem developed to explore the full lifecycle of publishing a production REST API, implementing CI/CD automation with GitHub Actions, and hosting interactive web applications via GitHub Pages. Powered by Python and FastAPI with multi-criteria search filtering, scheduled hourly cron workflows with self-updating data catalogues, targeted Telegram Bot API notifications with forum topics support, and deployment setups for Render and RapidAPI.',
-        tools: ['Python', 'FastAPI', 'GitHub Actions', 'GitHub Pages', 'REST API', 'Telegram API', 'TailwindCSS'],
-        role: 'Backend & DevOps Engineer',
-        code: 'https://github.com/ThomsMTZ/MakingMoney',
-        demo: 'https://thomsmtz.github.io/MakingMoney/',
-      },
-      {
-        id: 3,
-        name: 'Expo React native Tutorial',
-        description:
-          'The main objective is to master the fundamentals of React Native and the Expo framework in order to be able to build my own application afterwards. This tutorial has been very enriching and has allowed me to understand the subtleties of the framework.',
-        tools: ['React-Native', 'Typescript', 'Expo'],
-        role: 'FullStack Developer',
-      },
-    ],
-  },
-
-  // Education Section
-  education: {
-    title: 'Educations',
-    list: [
-      {
-        id: 1,
-        title: 'Engineering Degree in Computer Science & Technology ',
-        duration: '2017 – 2020',
-        institution: 'PolyTech School in Marseille',
-      },
-      {
-        id: 2,
-        title: 'TOEIC',
-        duration: '2020',
-        institution: '835 points',
-      },
-      {
-        id: 3,
-        title: 'PSM 1 Scrum Master',
-        duration: '2024',
-        institution: 'Scrum.org',
-      },
-    ],
-  },
-
-  // Contact Section
-  contact: {
-    title: 'CONTACT',
-    heading: 'Contact with me',
-    description:
-      "If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests.",
-    form: {
-      name: 'Your Name:',
-      email: 'Your Email:',
-      message: 'Your Message:',
-      send: 'Send Message',
-      sending: 'Sending Message...',
-      invalidEmail: 'Please provide a valid email!',
-      required: 'All fields are required!',
-      success: 'Message sent successfully!',
-      error: 'Something went wrong.',
+    tag: 'SELECTED WORKS',
+    title: 'Featured Case Studies & Products',
+    subtitle: 'From mission-critical sovereign security to Awwwards-inspired creative web and published mobile apps.',
+    viewLive: 'Live Product',
+    viewCode: 'Source Code',
+    confidential: 'Sovereign / Confidential',
+    labels: {
+      challenge: 'The Challenge',
+      architecture: 'Architecture & Stack',
+      impact: 'Outcome & Impact',
     },
   },
 
-  // Footer
-  footer: {
-    copyright: 'Made with ❤️ by',
+  leadership: {
+    tag: 'SERVANT LEADERSHIP & CULTURE',
+    title: 'How I Lead: The Engineering Manager & Agile Mindset',
+    subtitle: 'Great software is built by psychologically safe, autonomous, and purpose-driven teams.',
+    pillars: [
+      {
+        title: 'Servant Leadership & Trust',
+        description:
+          'My primary mission as a Lead or Scrum Master is removing roadblocks for developers, fostering an environment where failure is treated as data, and autonomy is encouraged.',
+      },
+      {
+        title: 'Pragmatic Delivery & Velocity',
+        description:
+          'Agile is not dogma. I tailor ceremonies to the teams real needs, reduce WIP (work-in-progress), clarify DODs, and secure a sustainable rhythm that consistently delivers value.',
+      },
+      {
+        title: 'Composure Under Crisis',
+        description:
+          'Emergency intervention at the Red Cross taught me decisive calm under extreme stress. In engineering, this translates into blameless post-mortems, rapid incident resolution, and unwavering support.',
+      },
+    ],
   },
 
-  // 404 Page
+  career: {
+    tag: 'TRACK RECORD',
+    title: 'Professional Journey & Milestones',
+    subtitle: '6+ years of sustained technical contribution and team leadership.',
+  },
+
+  techStack: {
+    tag: 'CAPABILITIES',
+    title: 'Architectural Toolbelt & Technologies',
+    subtitle: 'Proven tools selected for resilience, speed, and maintainability.',
+    categories: {
+      backend: 'Backend & Concurrency',
+      frontend: 'Frontend & Creative UI',
+      mobile: 'Mobile & App Stores',
+      agile: 'Leadership & DevOps',
+    },
+  },
+
+  contact: {
+    tag: 'LET’S BUILD TOGETHER',
+    title: 'Ready to elevate your engineering team?',
+    subtitle: 'Open to Senior Software Engineer, Tech Lead, and Engineering Manager opportunities.',
+    emailPrompt: 'Direct Email',
+    schedulePrompt: 'Schedule a Discussion',
+    copied: 'Email copied to clipboard!',
+    form: {
+      name: 'Your Name',
+      email: 'Your Email',
+      message: 'Your Message',
+      send: 'Send Message',
+      sending: 'Sending...',
+      success: 'Message sent successfully! I will reply promptly.',
+      error: 'Failed to send message. Please reach out directly via email.',
+    },
+  },
+
+  footer: {
+    rights: 'All rights reserved.',
+    builtWith: 'Engineered with Next.js 15, React 19 & TailwindCSS. Hosted on Vercel.',
+  },
+
   notFound: {
     title: '404',
     subtitle: 'Page Not Found',
-    description: 'Sorry, the page you are looking for does not exist.',
-    goHome: 'Go to Home',
+    description: 'Sorry, the requested page does not exist or has been relocated.',
+    goHome: 'Back to Home',
   },
 };

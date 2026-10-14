@@ -1,20 +1,23 @@
-import AboutSection from './components/homepage/about';
-import ContactSection from './components/homepage/contact';
-import Education from './components/homepage/education';
-import Experience from './components/homepage/experience';
-import HeroSection from './components/homepage/hero-section';
-import Projects from './components/homepage/projects';
-import Skills from './components/homepage/skills';
+import Hero from './components/v2/Hero';
+import BentoImpact from './components/v2/BentoImpact';
+import ProjectsShowcase from './components/v2/ProjectsShowcase';
+import LeadershipSection from './components/v2/LeadershipSection';
+import CareerTimeline from './components/v2/CareerTimeline';
+import TechStack from './components/v2/TechStack';
+import ContactSection from './components/v2/ContactSection';
 
+/**
+ * Main Home page assembling all V2 Awwwards-inspired sections.
+ */
 const Home = () => {
   return (
-    <div>
-      <HeroSection />
-      <AboutSection />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Education />
+    <div className="flex flex-col gap-8 sm:gap-12">
+      <Hero />
+      <BentoImpact />
+      <ProjectsShowcase />
+      <LeadershipSection />
+      <CareerTimeline />
+      <TechStack />
       <ContactSection />
     </div>
   );

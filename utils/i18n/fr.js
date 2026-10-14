@@ -1,170 +1,148 @@
 export const fr = {
-  // Navbar
   navbar: {
-    about: 'À PROPOS',
-    experience: 'EXPÉRIENCE',
-    skills: 'COMPÉTENCES',
-    projects: 'PROJETS',
-    education: 'FORMATION',
+    overview: 'Présentation',
+    impact: 'Impact',
+    works: 'Réalisations',
+    leadership: 'Agilité & Leadership',
+    career: 'Parcours',
+    contact: 'Contact',
+    resume: 'CV (PDF)',
+    available: 'Disponible pour opportunités Senior / Lead / Manager',
   },
 
-  // Hero Section
   hero: {
-    greeting: 'Bonjour,',
-    thisIs: "Je m'appelle",
-    professional: 'Je suis un Professionnel',
-    contactMe: 'Contactez-moi',
-    getResume: 'Télécharger le CV',
-    coder: {
-      name: 'name:',
-      skills: 'skills:',
-      hardWorker: 'hardWorker:',
-      quickLearner: 'quickLearner:',
-      problemSolver: 'problemSolver:',
-      hireable: 'hireable:',
-      returnStatement: 'return',
+    statusBadge: 'Senior Software Engineer • Scrum Master Certifié (PSM I)',
+    titlePrefix: 'Architecturer des systèmes critiques.',
+    titleHighlight: 'Faire grandir les équipes tech.',
+    description:
+      'Plus de 6 ans d’expérience sur des plateformes biométriques souveraines chez Thales, des moteurs réactifs chez Tricentis et des plateformes SaaS B2B. L’alliance d’une exigence technique pointue et d’un leadership bienveillant pour décupler la vélocité (+31%) et l’impact.',
+    ctaPrimary: 'Découvrir mes réalisations',
+    ctaSecondary: 'Télécharger mon CV',
+    location: 'Marseille, France • Hybride & Télétravail',
+    stats: {
+      experience: 'Années d’expérience',
+      velocity: 'Gain de vélocité sprint',
+      scale: 'Échelle nationale souveraine',
+      cert: 'Certifié PSM I',
     },
   },
 
-  // About Section
-  about: {
-    title: 'À PROPOS DE MOI',
-    heading: 'Qui suis-je ?',
-    description:
-      "Ingénieur Logiciel Senior Full-Stack & Scrum Master Certifié (PSM I) avec plus de 6 ans d'expérience dans la conception d'architectures critiques, de systèmes biométriques nationaux (Thales CABIS) et de microservices réactifs haute performance (Tricentis NeoLoad). Maîtrise éprouvée de Java 17/21, Vert.x, PostgreSQL, TypeScript et React, alliée à un leadership agile serviteur pour propulser la vélocité (+31%) et la cohésion d'équipe.",
+  bento: {
+    tag: 'IMPACT & LEADERSHIP',
+    title: 'Conçu pour la résilience, structuré pour le delivery.',
+    subtitle: 'La rencontre entre l’ingénierie système robuste et le management humain agile.',
+    card1: {
+      badge: 'SYSTÈMES CRITIQUES',
+      metric: 'Zéro-Panne',
+      title: 'Échelle Biométrique Nationale',
+      description:
+        'Conception de microservices réactifs distribués pour la plateforme CABIS de Thales. Traitement de millions d’identités souveraines avec consistance stricte et latence milliseconde.',
+    },
+    card2: {
+      badge: 'TRANSFORMATION AGILE',
+      metric: '+31%',
+      title: 'Accélération de la Vélocité',
+      description:
+        'Scrum Master certifié (PSM I). Élimination des frictions, clarification du backlog et sécurité psychologique pour accélérer le delivery sans compromettre le bien-être.',
+    },
+    card3: {
+      badge: 'HAUTE CONCURRENCE',
+      metric: 'Réactif',
+      title: 'Microservices Haute Fréquence',
+      description:
+        '4,5 ans en R&D sur le moteur de test de charge Tricentis NeoLoad. Maîtrise des architectures asynchrones événementielles avec Java 17/21 et Vert.x.',
+    },
+    card4: {
+      badge: 'GESTION DE CRISE',
+      metric: 'Terrain',
+      title: 'Chef d’Intervention — Croix-Rouge',
+      description:
+        'Commandement d’opérations d’urgence sous haute tension. Gestion du stress, arbitrage rapide et protection des équipes transposés au management technologique.',
+    },
   },
 
-  // Skills Section
-  skills: {
-    title: 'Compétences',
-  },
-
-  // Experience Section
-  experience: {
-    title: 'Expériences',
-    list: [
-      {
-        id: 1,
-        title: 'Ingénieur Logiciel Senior FullStack (Biométrie CABIS)',
-        company: 'Thales DIS (Gemalto)',
-        duration: '(Mars 2026 - Présent)',
-      },
-      {
-        id: 2,
-        title: 'Tech Lead & Scrum Master (Département AMS)',
-        company: 'Thales',
-        duration: '(Juin 2025 - Fév 2026)',
-      },
-      {
-        id: 3,
-        title: 'Ingénieur Logiciel R&D (NeoLoad) & Scrum Master',
-        company: 'Tricentis, France',
-        duration: '(Oct 2020 - Mai 2025)',
-      },
-      {
-        id: 4,
-        title: "Chef d'Intervention Bénévole",
-        company: 'Croix-Rouge Française',
-        duration: "(Nov 2020 – Présent)",
-      },
-      {
-        id: 5,
-        title: 'Stagiaire Développeur BI',
-        company: 'Syntell, Canada',
-        duration: '(Mars 2020 - Juil 2020)',
-      },
-    ],
-  },
-
-  // Projects Section
   projects: {
-    title: 'PROJETS',
-    viewMore: 'Voir Plus',
-    list: [
-      {
-        id: 1,
-        name: 'LedScroller2025',
-        description:
-          "Application mobile multiplateforme (iOS, Android, Web) reproduisant un affichage à défilement LED rétro néon. Développée avec Expo SDK 54 et React Native 0.81. Architecture modulaire optimisée : animations 60 FPS propulsées par Reanimated 4 (Worklets natifs), interactions gestuelles fluides (pinch-to-zoom et double-tap via Gesture Handler v2) synchronisant l'état animé et le layout, shaders de grille LED, sélecteur de couleurs arc-en-ciel, i18n (FR/EN/ES) et persistance locale avec AsyncStorage. Qualité industrielle maintenue à 92% de couverture de tests validée par le Quality Gate SonarCloud.",
-        tools: ['React Native', 'Expo', 'TypeScript', 'Reanimated', 'Gesture Handler', 'SonarCloud'],
-        role: 'Développeur Mobile',
-        code: 'https://github.com/ThomsMTZ/LedScroller2025',
-      },
-      {
-        id: 2,
-        name: 'TechJobsRadar API',
-        description:
-          "Écosystème automatisé d'agrégation d'offres d'emploi tech et freelance, conçu pour explorer le cycle complet de mise en ligne d'une API REST en production, l'automatisation CI/CD avec GitHub Actions et l'hébergement d'une interface web sur GitHub Pages. Développé avec Python et FastAPI pour filtrer les opportunités selon des critères personnalisés, il intègre des workflows GitHub Actions planifiés par cron horaire (scraping automatique et auto-commit dans le dépôt), des alertes Telegram ciblées par forum topics, ainsi qu'une vitrine web déployée sur GitHub Pages.",
-        tools: ['Python', 'FastAPI', 'GitHub Actions', 'GitHub Pages', 'API REST', 'Telegram API', 'TailwindCSS'],
-        role: 'Ingénieur Backend & DevOps',
-        code: 'https://github.com/ThomsMTZ/MakingMoney',
-        demo: 'https://thomsmtz.github.io/MakingMoney/',
-      },
-      {
-        id: 3,
-        name: 'Tutoriel Expo React Native',
-        description:
-          "L'objectif principal est de maîtriser les fondamentaux de React Native et du framework Expo afin de pouvoir construire ma propre application par la suite. Ce tutoriel a été très enrichissant et m'a permis de comprendre les subtilités du framework.",
-        tools: ['React-Native', 'Typescript', 'Expo'],
-        role: 'Développeur FullStack',
-      },
-    ],
-  },
-
-  // Education Section
-  education: {
-    title: 'Formations',
-    list: [
-      {
-        id: 1,
-        title: "Diplôme d'Ingénieur en Informatique & Technologie",
-        duration: '2017 – 2020',
-        institution: 'École Polytechnique de Marseille',
-      },
-      {
-        id: 2,
-        title: 'TOEIC',
-        duration: '2020',
-        institution: '835 points',
-      },
-      {
-        id: 3,
-        title: 'PSM 1 Scrum Master',
-        duration: '2024',
-        institution: 'Scrum.org',
-      },
-    ],
-  },
-
-  // Contact Section
-  contact: {
-    title: 'CONTACT',
-    heading: 'Contactez-moi',
-    description:
-      "Si vous avez des questions ou des préoccupations, n'hésitez pas à me contacter. Je suis ouvert à toute opportunité de travail qui correspond à mes compétences et à mes intérêts.",
-    form: {
-      name: 'Votre Nom :',
-      email: 'Votre Email :',
-      message: 'Votre Message :',
-      send: 'Envoyer le Message',
-      sending: 'Envoi en cours...',
-      invalidEmail: 'Veuillez fournir un email valide !',
-      required: 'Tous les champs sont obligatoires !',
-      success: 'Message envoyé avec succès !',
-      error: "Une erreur s'est produite.",
+    tag: 'RÉALISATIONS PHARES',
+    title: 'Études de Cas & Produits Concrets',
+    subtitle: 'De la sécurité régalienne nationale aux créations web de calibre Awwwards et applications mobiles publiées.',
+    viewLive: 'Voir le produit en ligne',
+    viewCode: 'Code source GitHub',
+    confidential: 'Projet Souverain / Confidentiel',
+    labels: {
+      challenge: 'Le Défi',
+      architecture: 'Architecture & Stack',
+      impact: 'Résultats & Impact',
     },
   },
 
-  // Footer
-  footer: {
-    copyright: 'Fait avec ❤️ par',
+  leadership: {
+    tag: 'SERVANT LEADERSHIP & CULTURE',
+    title: 'Ma Vision : La Posture d’Engineering Manager & Scrum Master',
+    subtitle: 'Un logiciel d’exception naît d’une équipe autonome, alignée et en sécurité psychologique.',
+    pillars: [
+      {
+        title: 'Servant Leadership & Confiance',
+        description:
+          'Mon rôle premier en tant que Lead ou Scrum Master est de dégager la route pour les développeurs, de lever les irritants et de créer un cadre où l’erreur est une donnée d’apprentissage, pas une faute.',
+      },
+      {
+        title: 'Delivery Pragmatique & Vélocité',
+        description:
+          'L’agilité n’est pas un dogme rigide. J’adapte les rituels à la réalité de l’équipe, je réduis le travail en cours (WIP) et j’instaure une cadence soutenable qui garantit un delivery prévisible.',
+      },
+      {
+        title: 'Calme & Sang-Froid en Gestion de Crise',
+        description:
+          'Mes missions de chef d’intervention à la Croix-Rouge m’ont appris à décider avec calme sous pression. En ingénierie, cela se traduit par des post-mortems sans blâme, une résolution d’incidents sereine et un soutien indéfectible à l’équipe.',
+      },
+    ],
   },
 
-  // 404 Page
+  career: {
+    tag: 'PARCOURS & EXPÉRIENCES',
+    title: 'Chronologie Professionnelle & Jalons',
+    subtitle: 'Plus de 6 ans de contributions techniques à fort enjeu et de leadership agile.',
+  },
+
+  techStack: {
+    tag: 'COMPÉTENCES',
+    title: 'Boîte à Outils & Architectures',
+    subtitle: 'Des technologies éprouvées sélectionnées pour leur fiabilité, leur performance et leur maintenabilité.',
+    categories: {
+      backend: 'Backend & Haute Concurrence',
+      frontend: 'Frontend & Creative Web',
+      mobile: 'Mobile & Publication Stores',
+      agile: 'Leadership, Agilité & DevOps',
+    },
+  },
+
+  contact: {
+    tag: 'CONSTRUISONS ENSEMBLE',
+    title: 'Prêt à donner un nouvel élan à vos équipes ?',
+    subtitle: 'À l’écoute d’opportunités en tant que Senior Software Engineer, Tech Lead ou Engineering Manager.',
+    emailPrompt: 'Email direct',
+    schedulePrompt: 'Échanger lors d’un call',
+    copied: 'Email copié dans le presse-papier !',
+    form: {
+      name: 'Votre nom',
+      email: 'Votre adresse email',
+      message: 'Votre message',
+      send: 'Envoyer le message',
+      sending: 'Envoi en cours...',
+      success: 'Message envoyé avec succès ! Je vous répondrai rapidement.',
+      error: 'Échec de l’envoi. Vous pouvez me contacter directement par email.',
+    },
+  },
+
+  footer: {
+    rights: 'Tous droits réservés.',
+    builtWith: 'Conçu avec Next.js 15, React 19 & TailwindCSS. Hébergé sur Vercel.',
+  },
+
   notFound: {
     title: '404',
-    subtitle: 'Page Non Trouvée',
-    description: "Désolé, la page que vous recherchez n'existe pas.",
-    goHome: "Retour à l'Accueil",
+    subtitle: 'Page introuvable',
+    description: 'Désolé, la page demandée n’existe pas ou a été déplacée.',
+    goHome: 'Retour à l’accueil',
   },
 };
