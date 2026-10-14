@@ -3,7 +3,7 @@ export const en = {
     overview: 'Overview',
     impact: 'Impact',
     works: 'Selected Works',
-    leadership: 'Agile & Leadership',
+    leadership: 'Leadership',
     career: 'Career',
     contact: 'Contact',
     resume: 'Resume',

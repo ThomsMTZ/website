@@ -3,7 +3,7 @@ export const fr = {
     overview: 'Présentation',
     impact: 'Impact',
     works: 'Réalisations',
-    leadership: 'Agilité & Leadership',
+    leadership: 'Leadership',
     career: 'Parcours',
     contact: 'Contact',
     resume: 'CV (PDF)',

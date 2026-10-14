@@ -1,17 +1,24 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/utils/i18n';
 import { projectsData } from '@/utils/data/projects-data';
-import { ExternalLink, Lock, ArrowUpRight, Sparkles, Smartphone, Layers, Server } from 'lucide-react';
+import { Lock, ArrowUpRight, Sparkles, Smartphone, Layers, Server } from 'lucide-react';
 import { BsGithub } from 'react-icons/bs';
 
 /**
- * Editorial Projects Showcase presenting key case studies with magazine hierarchy,
- * bespoke numerals, and deep architectural rationale.
+ * Editorial Projects Showcase displaying real logos, localized copy,
+ * Play Store links, and deep architectural rationale.
  */
 const ProjectsShowcase = () => {
   const { language } = useTranslation();
+
+  const getLocalized = (field, lang) => {
+    if (!field) return '';
+    if (typeof field === 'string') return field;
+    return field[lang] || field.en || '';
+  };
 
   const getProjectIcon = slug => {
     switch (slug) {
@@ -35,7 +42,7 @@ const ProjectsShowcase = () => {
         <div className="flex items-center gap-3">
           <span className="h-[1px] w-8 bg-[#c5a880]" />
           <span className="text-[11px] uppercase tracking-[0.3em] text-[#c5a880] font-medium font-modern">
-            {language === 'fr' ? 'Dossiers & Études de Cas' : 'Selected Works & Case Studies'}
+            {language === 'fr' ? 'Dossiers & Réalisations Phares' : 'Flagship Works & Case Studies'}
           </span>
         </div>
 
@@ -64,6 +71,10 @@ const ProjectsShowcase = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
         {projectsData.map((project, index) => {
           const numberLabel = `0${index + 1} / 04`;
+          const badgeText = getLocalized(project.badge, language);
+          const subtitleText = getLocalized(project.subtitle, language);
+          const descriptionText = getLocalized(project.description, language);
+          const impactText = getLocalized(project.impact, language);
 
           return (
             <motion.article
@@ -82,7 +93,7 @@ const ProjectsShowcase = () => {
                   </span>
                   <div className="flex items-center gap-2">
                     <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 font-modern">
-                      {project.badge}
+                      {badgeText}
                     </span>
                     <div className="p-1.5 rounded bg-white/[0.04] border border-white/[0.08]">
                       {getProjectIcon(project.slug)}
@@ -90,24 +101,40 @@ const ProjectsShowcase = () => {
                   </div>
                 </div>
 
-                {/* Project Title & Subtitle */}
-                <h3 className="font-editorial text-3xl sm:text-4xl text-white font-light group-hover:text-gold-gradient transition-colors mb-2">
-                  {project.name}
-                </h3>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-modern mb-5 font-medium">
-                  {project.subtitle}
-                </p>
+                {/* Project Header with optional Logo */}
+                <div className="flex items-start justify-between gap-4 mb-3">
+                  <div>
+                    <h3 className="font-editorial text-3xl sm:text-4xl text-white font-light group-hover:text-gold-gradient transition-colors">
+                      {project.name}
+                    </h3>
+                    <p className="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-modern mt-1 font-medium">
+                      {subtitleText}
+                    </p>
+                  </div>
+
+                  {project.logo && (
+                    <div className="relative shrink-0 w-12 h-12 rounded-xl overflow-hidden bg-white/[0.04] border border-white/10 p-1 flex items-center justify-center">
+                      <Image
+                        src={project.logo}
+                        alt={`${project.name} Logo`}
+                        width={44}
+                        height={44}
+                        className="object-contain"
+                      />
+                    </div>
+                  )}
+                </div>
 
                 {/* Description */}
                 <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-light font-modern mb-6">
-                  {project.description}
+                  {descriptionText}
                 </p>
 
                 {/* Impact Statement */}
-                {project.impact && (
+                {impactText && (
                   <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] mb-6">
                     <p className="text-xs sm:text-sm text-zinc-300 font-editorial italic">
-                      &ldquo;{project.impact}&rdquo;
+                      &ldquo;{impactText}&rdquo;
                     </p>
                   </div>
                 )}
@@ -127,9 +154,22 @@ const ProjectsShowcase = () => {
                 </div>
 
                 {/* Actions Bar */}
-                <div className="flex items-center justify-between pt-2">
-                  <div className="flex items-center gap-4">
-                    {project.demo && (
+                <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
+                  <div className="flex flex-wrap items-center gap-4">
+                    {project.playStore && (
+                      <a
+                        href={project.playStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] hover:bg-[#c5a880]/20 text-[#c5a880] border border-[#c5a880]/40 text-xs font-modern uppercase tracking-wider transition-all group/play"
+                      >
+                        <Smartphone className="w-3.5 h-3.5" />
+                        <span>Google Play Store</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 group-hover/play:translate-x-0.5 group-hover/play:-translate-y-0.5 transition-transform" />
+                      </a>
+                    )}
+
+                    {project.demo && !project.playStore && (
                       <a
                         href={project.demo}
                         target="_blank"
@@ -156,7 +196,11 @@ const ProjectsShowcase = () => {
                     {!project.demo && !project.code && (
                       <div className="inline-flex items-center gap-2 text-xs font-modern uppercase tracking-widest text-zinc-400">
                         <Lock className="w-3.5 h-3.5 text-[#c5a880]" />
-                        <span>{language === 'fr' ? 'Architecture Souveraine (Confidentiel)' : 'Sovereign Architecture (NDA)'}</span>
+                        <span>
+                          {language === 'fr'
+                            ? 'Architecture Souveraine (Confidentiel)'
+                            : 'Sovereign Architecture (NDA)'}
+                        </span>
                       </div>
                     )}
                   </div>
