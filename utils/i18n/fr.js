@@ -18,7 +18,7 @@ export const fr = {
       'Plus de 6 ans d’expérience sur des plateformes biométriques souveraines chez Thales, des moteurs réactifs chez Tricentis et des plateformes SaaS B2B. L’alliance d’une exigence technique pointue et d’un leadership bienveillant pour décupler la vélocité (+31%) et l’impact.',
     ctaPrimary: 'Découvrir mes réalisations',
     ctaSecondary: 'Télécharger mon CV',
-    location: 'Marseille, France • Hybride & Télétravail',
+    location: 'France • Mobilité Internationale & Full Remote',
     stats: {
       experience: 'Années d’expérience',
       velocity: 'Gain de vélocité sprint',

@@ -69,8 +69,8 @@ const ContactSection = () => {
 
         <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl font-modern">
           {language === 'fr'
-            ? "Disponible pour des opportunités de Senior Software Engineer, Tech Lead ou Scrum Master / Engineering Manager (Marseille, Paris ou Remote)."
-            : 'Available for Senior Software Engineer, Tech Lead, or Scrum Master / Engineering Manager opportunities (Marseille, Paris, or Remote).'}
+            ? "Disponible pour des opportunités de Senior Software Engineer, Tech Lead ou Engineering Manager — Ouvert à la mobilité internationale (relocation monde entier) & Full Remote."
+            : 'Available for Senior Software Engineer, Tech Lead, or Engineering Manager opportunities — Open to Worldwide Relocation & Global Remote.'}
         </p>
       </div>
 

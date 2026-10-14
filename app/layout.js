@@ -24,7 +24,7 @@ export const metadata = {
   metadataBase: new URL('https://thomsmtz.dev'),
   title: 'Thomas Martinez — Senior Software Engineer & Agile Lead (PSM I)',
   description:
-    'Portfolio of Thomas Martinez, a Senior Software Engineer & Certified Scrum Master (PSM I) with 6+ years of experience architecting national biometric platforms (Thales CABIS), high-throughput reactive microservices (Tricentis NeoLoad), and B2B SaaS platforms. Based in Marseille, France.',
+    'Portfolio of Thomas Martinez, Senior Software Engineer & Certified Scrum Master (PSM I) with 6+ years of experience architecting national biometric platforms (Thales CABIS), high-throughput reactive microservices (Tricentis NeoLoad), and B2B SaaS platforms. Open to Worldwide Relocation & Global Remote.',
   keywords: [
     'Thomas Martinez',
     'Senior Software Engineer',
@@ -32,6 +32,8 @@ export const metadata = {
     'PSM I',
     'Tech Lead',
     'Engineering Manager',
+    'Worldwide Relocation',
+    'Remote Engineer',
     'Java 21',
     'Vert.x',
     'PostgreSQL',
@@ -42,8 +44,8 @@ export const metadata = {
     'Biometrics',
     'Thales',
     'Tricentis',
-    'Marseille',
     'France',
+    'Spain',
     'portfolio',
   ],
   authors: [{ name: 'Thomas Martinez', url: 'https://thomsmtz.dev' }],
@@ -57,7 +59,7 @@ export const metadata = {
     url: 'https://thomsmtz.dev',
     title: 'Thomas Martinez — Senior Software Engineer & Agile Lead (PSM I)',
     description:
-      'Portfolio of Thomas Martinez, Senior Software Engineer and certified Scrum Master (PSM I). Expertise in distributed systems, Java 21, Vert.x, PostgreSQL, React, and Agile Team Leadership.',
+      'Portfolio of Thomas Martinez, Senior Software Engineer and certified Scrum Master (PSM I). Distributed systems, Java 21, Vert.x, PostgreSQL, React. Open to Worldwide Relocation & Global Remote.',
     siteName: 'Thomas Martinez Portfolio',
     images: [
       {

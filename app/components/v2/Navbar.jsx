@@ -103,7 +103,7 @@ const Navbar = () => {
 
           {/* Resume link */}
           <a
-            href={personalData.resume}
+            href={personalData.resumes?.[language] || personalData.resume}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-tactile hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-modern uppercase tracking-wider text-white bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-[#c5a880]/50 transition-all duration-200 shadow-sm"
@@ -142,7 +142,7 @@ const Navbar = () => {
 
           <div className="flex items-center justify-between pt-1">
             <a
-              href={personalData.resume}
+              href={personalData.resumes?.[language] || personalData.resume}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs font-modern uppercase tracking-widest text-[#c5a880]"
@@ -151,7 +151,7 @@ const Navbar = () => {
               <span>{t.navbar.resume}</span>
               <ArrowUpRight className="w-3 h-3" />
             </a>
-            <span className="text-[11px] text-zinc-500 font-modern">Marseille, France</span>
+            <span className="text-[11px] text-zinc-400 font-modern">France &bull; Global Mobility</span>
           </div>
         </div>
       )}

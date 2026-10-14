@@ -29,9 +29,9 @@ const Hero = () => {
         >
           <span className="text-[#c5a880] font-semibold">LOC_01</span>
           <span className="text-zinc-600">/</span>
-          <span>MARSEILLE &bull; FRANCE</span>
+          <span>FRANCE</span>
           <span className="text-zinc-600">/</span>
-          <span className="text-zinc-500">UTC+1</span>
+          <span className="text-[#c5a880] font-medium">WORLDWIDE MOBILITY &bull; REMOTE</span>
         </motion.div>
 
         <motion.div
@@ -92,7 +92,11 @@ const Hero = () => {
             className="mt-5 flex items-center gap-2 text-xs text-zinc-400 font-modern"
           >
             <MapPin className="w-3.5 h-3.5 text-[#c5a880]" />
-            <span>Marseille, France &bull; Remote & On-Site</span>
+            <span>
+              {language === 'fr'
+                ? 'France • Mobilité Internationale (Monde entier) & Full Remote'
+                : 'France • Open to Worldwide Relocation & Full Remote'}
+            </span>
           </motion.div>
 
           {/* Apple-grade Physical Buttons */}
@@ -114,7 +118,7 @@ const Hero = () => {
             </motion.a>
 
             <motion.a
-              href={personalData.resume}
+              href={personalData.resumes?.[language] || personalData.resume}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}

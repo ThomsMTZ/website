@@ -25,7 +25,7 @@ const Footer = () => {
               Thomas Martinez
             </span>
             <span className="text-xs text-zinc-400 mt-1 font-modern">
-              Senior Software Engineer • Scrum Master PSM I • Marseille, France
+              Senior Software Engineer • Certified Scrum Master (PSM I) • Global Mobility & Remote
             </span>
           </div>
 
@@ -68,7 +68,7 @@ const Footer = () => {
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-white/[0.04] text-xs text-zinc-500 font-modern">
           <span>© {new Date().getFullYear()} Thomas Martinez. Tous droits réservés.</span>
-          <span className="text-zinc-600">Marseille • Remote • France</span>
+          <span className="text-zinc-500 font-mono text-[11px]">France &bull; Worldwide Relocation &bull; Full Remote</span>
         </div>
       </div>
     </footer>

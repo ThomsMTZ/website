@@ -18,7 +18,7 @@ export const en = {
       '6+ years of experience delivering national biometric systems at Thales, high-throughput reactive engines at Tricentis, and data-driven SaaS platforms. Blending technical rigor with servant leadership to drive delivery velocity (+31%) and team empowerment.',
     ctaPrimary: 'Explore Selected Works',
     ctaSecondary: 'Download CV',
-    location: 'Marseille, France • Remote-friendly',
+    location: 'France • Worldwide Relocation & Full Remote',
     stats: {
       experience: 'Years Experience',
       velocity: 'Sprint Velocity Gain',
