@@ -4,7 +4,13 @@ import { motion } from 'framer-motion';
 import { useTranslation } from '@/utils/i18n';
 import { Shield, ArrowUpRight, Activity } from 'lucide-react';
 import { appleSpring, tactileTap } from '@/utils/motion';
-import { ThalesLogo, CroixRougeLogo, ScrumOrgBadge } from './BrandLogos';
+import {
+  ThalesLogo,
+  ThalesWatermark,
+  CroixRougeBadge,
+  CroixRougeWatermark,
+  ScrumOrgBadge,
+} from './BrandLogos';
 
 /**
  * Editorial Architectural Impact section replacing formulaic bento grids
@@ -47,8 +53,8 @@ const BentoImpact = () => {
             className="lg:col-span-7 rounded-2xl p-8 sm:p-10 bg-gradient-to-br from-[#12131a] to-[#0a0a0e] border border-white/10 card-tactile flex flex-col justify-between group relative overflow-hidden"
           >
             {/* Subtle Sovereign Watermark */}
-            <div className="absolute -right-12 -bottom-12 w-80 h-40 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity pointer-events-none select-none text-white overflow-hidden flex items-center justify-center">
-              <ThalesLogo watermark className="w-full h-full text-white" />
+            <div className="absolute -right-8 -bottom-6 w-[360px] opacity-[0.045] group-hover:opacity-[0.08] transition-opacity pointer-events-none select-none text-white overflow-hidden flex items-center justify-center">
+              <ThalesWatermark className="w-full h-auto text-white" />
             </div>
 
             <div className="relative z-10">
@@ -57,7 +63,9 @@ const BentoImpact = () => {
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   <span>STATE-LEVEL RUNTIME // CABIS ENGINE</span>
                 </div>
-                <ThalesLogo className="text-zinc-200" />
+                <div className="px-3.5 py-1.5 rounded-lg bg-white/[0.06] border border-white/15 flex items-center justify-center shadow-sm">
+                  <ThalesLogo className="h-4 sm:h-4.5 w-auto" />
+                </div>
               </div>
 
               <div className="flex items-center gap-3 mb-4">
@@ -120,7 +128,10 @@ const BentoImpact = () => {
               <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light">
                 {language === 'fr' ? 'Scrum Master Certifié (PSM I)' : 'Certified Scrum Master (PSM I)'}
               </h3>
-              <ScrumOrgBadge />
+              <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-white/[0.04] border border-white/10">
+                <ScrumOrgBadge size={22} />
+                <span className="font-mono text-xs font-semibold text-zinc-200">PSM I</span>
+              </div>
             </div>
 
             <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-light font-modern">
@@ -147,7 +158,7 @@ const BentoImpact = () => {
         >
           {/* Subtle Red Cross Watermark */}
           <div className="absolute -right-8 -bottom-8 w-60 h-60 opacity-[0.035] group-hover:opacity-[0.07] transition-opacity pointer-events-none select-none text-red-500 overflow-hidden flex items-center justify-center">
-            <CroixRougeLogo watermark className="w-full h-full text-red-500" />
+            <CroixRougeWatermark className="w-full h-full text-red-500" />
           </div>
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -157,7 +168,9 @@ const BentoImpact = () => {
                   <Activity className="w-4 h-4 text-[#c5a880]" />
                   <span>MARSEILLE OPERATIONAL UNIT // HIGH-STRESS FIELD COMMAND</span>
                 </div>
-                <CroixRougeLogo className="text-zinc-200" />
+                <div className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 flex items-center">
+                  <CroixRougeBadge />
+                </div>
               </div>
 
               <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light mb-3">

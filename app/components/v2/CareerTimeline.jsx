@@ -6,7 +6,7 @@ import { experiences } from '@/utils/data/experience';
 import { educations } from '@/utils/data/educations';
 import { MapPin } from 'lucide-react';
 import { appleSpring } from '@/utils/motion';
-import { ThalesLogo, TricentisLogo, CroixRougeLogo } from './BrandLogos';
+import { ThalesLogo, TricentisNeoLoadLogo, CroixRougeBadge } from './BrandLogos';
 
 /**
  * Editorial Career Timeline and Academic / Certification Credentials.
@@ -29,15 +29,31 @@ const CareerTimeline = () => {
 
   const renderCompanyBadge = company => {
     if (company.includes('Thales')) {
-      return <ThalesLogo className="text-zinc-300" />;
+      return (
+        <div className="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/15 flex items-center justify-center shadow-sm">
+          <ThalesLogo className="h-3.5 sm:h-4 w-auto" />
+        </div>
+      );
     }
     if (company.includes('Tricentis')) {
-      return <TricentisLogo className="text-zinc-300" />;
+      return (
+        <div className="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/15 flex items-center shadow-sm">
+          <TricentisNeoLoadLogo />
+        </div>
+      );
     }
     if (company.includes('Croix-Rouge')) {
-      return <CroixRougeLogo className="text-zinc-300" />;
+      return (
+        <div className="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/15 flex items-center shadow-sm">
+          <CroixRougeBadge />
+        </div>
+      );
     }
-    return <span className="font-mono text-xs uppercase tracking-wider text-zinc-300 font-semibold">{company}</span>;
+    return (
+      <span className="font-mono text-xs uppercase tracking-wider text-zinc-300 font-semibold px-2 py-1 rounded bg-white/[0.04]">
+        {company}
+      </span>
+    );
   };
 
   return (

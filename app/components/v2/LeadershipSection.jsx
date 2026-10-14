@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/utils/i18n';
 import { appleSpring } from '@/utils/motion';
-import { CroixRougeLogo, ScrumOrgBadge } from './BrandLogos';
+import { ScrumOrgBadge } from './BrandLogos';
 
 /**
  * Editorial Leadership & Management doctrine section.
@@ -84,24 +84,36 @@ const LeadershipSection = () => {
               </blockquote>
             </div>
 
-            <div className="lg:col-span-4 flex flex-col gap-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-8">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded bg-white/[0.04] border border-white/10">
-                  <ScrumOrgBadge />
+            <div className="lg:col-span-4 flex flex-col gap-3.5 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-8">
+              {/* Scrum.org PSM I Credential Card */}
+              <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[#c5a880]/30 transition-colors">
+                <div className="relative shrink-0 w-11 h-11 rounded-lg overflow-hidden bg-white/[0.06] border border-white/10 p-1 flex items-center justify-center">
+                  <ScrumOrgBadge size={34} />
                 </div>
-                <div>
-                  <p className="font-mono text-xs text-white">Scrum.org PSM I</p>
-                  <p className="text-[11px] text-zinc-400 font-mono">Certification #971439</p>
+                <div className="flex flex-col min-w-0">
+                  <div className="flex items-center gap-2">
+                    <p className="font-modern font-semibold text-xs text-white uppercase tracking-wider">Scrum.org PSM I</p>
+                    <span className="font-mono text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">VERIFIED</span>
+                  </div>
+                  <p className="font-mono text-[11px] text-[#c5a880]">Licence #971439</p>
+                  <p className="font-modern text-[11px] text-zinc-400 truncate">Professional Scrum Master</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded bg-white/[0.04] border border-white/10">
-                  <CroixRougeLogo className="text-zinc-200" />
+              {/* Croix-Rouge française Leadership Card */}
+              <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-red-500/30 transition-colors">
+                <div className="relative shrink-0 w-11 h-11 rounded-lg overflow-hidden bg-white/[0.06] border border-white/10 p-1 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-md">
+                    <svg viewBox="0 0 24 24" fill="#E30613" className="w-4 h-4">
+                      <rect x="9.5" y="3" width="5" height="18" rx="0.5" />
+                      <rect x="3" y="9.5" width="18" height="5" rx="0.5" />
+                    </svg>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-mono text-xs text-white">Croix-Rouge française</p>
-                  <p className="text-[11px] text-zinc-400 font-mono">Responsable Opérationnel de Secours</p>
+                <div className="flex flex-col min-w-0">
+                  <p className="font-modern font-semibold text-xs text-white uppercase tracking-wider">Croix-Rouge française</p>
+                  <p className="font-mono text-[11px] text-red-400">Direction des Secours</p>
+                  <p className="font-modern text-[11px] text-zinc-400 truncate">Responsable Opérationnel</p>
                 </div>
               </div>
             </div>

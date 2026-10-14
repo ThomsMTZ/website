@@ -7,7 +7,7 @@ import { projectsData } from '@/utils/data/projects-data';
 import { Lock, ArrowUpRight, Smartphone, Layers, Server, Compass } from 'lucide-react';
 import { BsGithub } from 'react-icons/bs';
 import { appleSpring, tactileTap } from '@/utils/motion';
-import { ThalesLogo, GooglePlayLogo } from './BrandLogos';
+import { ThalesLogo, ThalesWatermark, GooglePlayLogo } from './BrandLogos';
 
 /**
  * Editorial Projects Showcase featuring asymmetric flagship dossier layout,
@@ -74,9 +74,9 @@ const ProjectsShowcase = () => {
               whileTap={tactileTap}
               className="rounded-2xl p-8 sm:p-12 bg-gradient-to-br from-[#12131a] via-[#0d0e14] to-[#0a0a0d] border border-white/10 card-tactile relative overflow-hidden group"
             >
-              {/* Subtle Thales Watermark in Background */}
-              <div className="absolute -right-16 -bottom-16 w-96 h-48 opacity-[0.035] group-hover:opacity-[0.06] transition-opacity pointer-events-none select-none text-white overflow-hidden flex items-center justify-center">
-                <ThalesLogo watermark className="w-full h-full text-white" />
+              {/* Authentic Thales Watermark in Background */}
+              <div className="absolute -right-10 -bottom-6 w-[360px] sm:w-[480px] opacity-[0.045] group-hover:opacity-[0.08] transition-opacity pointer-events-none select-none text-white overflow-hidden flex items-center justify-center">
+                <ThalesWatermark className="w-full h-auto text-white" />
               </div>
 
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -92,7 +92,9 @@ const ProjectsShowcase = () => {
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <ThalesLogo className="text-zinc-300" />
+                        <div className="px-3.5 py-1.5 rounded-lg bg-white/[0.06] border border-white/15 flex items-center justify-center shadow-sm">
+                          <ThalesLogo className="h-4 sm:h-4.5 w-auto" />
+                        </div>
                         <div className="p-2 rounded bg-white/[0.04] border border-white/10">
                           {getProjectIcon(flagship.slug)}
                         </div>
