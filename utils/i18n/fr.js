@@ -79,6 +79,8 @@ export const fr = {
     tag: 'SERVANT LEADERSHIP & CULTURE',
     title: 'Ma Vision : La Posture d’Engineering Manager & Scrum Master',
     subtitle: 'Un logiciel d’exception naît d’une équipe autonome, alignée et en sécurité psychologique.',
+    quote:
+      'Un logiciel d’exception naît d’une équipe autonome, alignée et en sécurité psychologique. Mon rôle est d’éliminer les frictions pour que le talent s’exprime pleinement.',
     pillars: [
       {
         title: 'Servant Leadership & Confiance',

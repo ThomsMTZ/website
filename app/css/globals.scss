@@ -48,9 +48,54 @@ body {
   background: #36394e;
 }
 
+/* Editorial typography & luxury accents */
+.font-editorial {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-modern {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f7ecd7 0%, #c5a880 50%, #9e7f53 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-subtle {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.border-gold-subtle {
+  border-color: rgba(197, 168, 128, 0.25);
+}
+
+.bg-glass {
+  background: rgba(14, 14, 18, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.bg-glass-card {
+  background: rgba(18, 18, 24, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.bg-glass-card:hover {
+  border-color: rgba(197, 168, 128, 0.35);
+}
+
+.film-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
 /* Card glass effect */
 .glass-panel {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.008) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -61,14 +106,14 @@ body {
 }
 
 .glass-panel-hover:hover {
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(197, 168, 128, 0.3);
   transform: translateY(-2px);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
 }
 
 /* Subtle spotlight radial gradient */
 .spotlight-radial {
-  background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%);
+  background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.05), transparent 40%);
 }
 
 /* Anchor offset for fixed floating navbar */

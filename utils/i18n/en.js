@@ -79,6 +79,8 @@ export const en = {
     tag: 'SERVANT LEADERSHIP & CULTURE',
     title: 'How I Lead: The Engineering Manager & Agile Mindset',
     subtitle: 'Great software is built by psychologically safe, autonomous, and purpose-driven teams.',
+    quote:
+      'Exceptional software emerges from autonomous, psychologically safe engineering teams. My job is eliminating friction so talent can thrive.',
     pillars: [
       {
         title: 'Servant Leadership & Trust',

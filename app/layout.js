@@ -1,15 +1,23 @@
-import { GoogleTagManager } from '@next/third-parties/google';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
 import Navbar from './components/v2/Navbar';
 import Footer from './components/v2/Footer';
 import SmoothScroll from './components/v2/SmoothScroll';
 import './css/globals.scss';
 import { I18nProvider } from '@/utils/i18n';
 
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-cormorant',
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+});
+
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-jakarta',
+  weight: ['300', '400', '500', '600', '700'],
 });
 
 export const metadata = {
@@ -71,7 +79,7 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="fr" className="scroll-smooth dark">
-      <body className={`${jakarta.className} bg-[#08080a] text-[#ededef] antialiased selection:bg-emerald-500/30 selection:text-emerald-200`}>
+      <body className={`${jakarta.variable} ${cormorant.variable} ${jakarta.className} bg-[#08080a] text-[#ededef] antialiased selection:bg-[#c5a880] selection:text-black`}>
         <I18nProvider>
           <SmoothScroll>
             <Navbar />
@@ -82,7 +90,6 @@ const RootLayout = ({ children }) => {
           </SmoothScroll>
         </I18nProvider>
       </body>
-      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
     </html>
   );
 };

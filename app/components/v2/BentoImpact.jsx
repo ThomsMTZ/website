@@ -1,171 +1,180 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useTranslation } from '@/utils/i18n';
-import { Shield, TrendingUp, Cpu, HeartHandshake, CheckCircle2 } from 'lucide-react';
+import { Shield, Sparkles, HeartHandshake, ArrowUpRight } from 'lucide-react';
 
 /**
- * Bento Grid highlighting the 4 core pillars of technical impact and leadership.
+ * Editorial Architectural Impact section replacing generic AI bento grids
+ * with haute-couture storytelling and measurable engineering metrics.
  */
 const BentoImpact = () => {
-  const { t } = useTranslation();
+  const { language } = useTranslation();
 
   return (
-    <section id="impact" className="py-20 sm:py-28 relative">
-      {/* Section Header */}
-      <div className="flex flex-col items-start gap-3 max-w-3xl mb-12 sm:mb-16">
-        <span className="text-xs font-mono tracking-wider uppercase text-emerald-400">
-          {'//'} {t.bento.tag}
-        </span>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
-          {t.bento.title}
+    <section id="impact" className="py-24 sm:py-32 relative">
+      {/* Editorial Section Header */}
+      <div className="flex flex-col items-start gap-4 max-w-4xl mb-16 sm:mb-20">
+        <div className="flex items-center gap-3">
+          <span className="h-[1px] w-8 bg-[#c5a880]" />
+          <span className="text-[11px] uppercase tracking-[0.3em] text-[#c5a880] font-medium font-modern">
+            {language === 'fr' ? 'Philosophie & Impact Réel' : 'Engineering Philosophy & Tangible Impact'}
+          </span>
+        </div>
+
+        <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.05] tracking-[-0.02em]">
+          {language === 'fr' ? (
+            <>
+              La complexité maîtrisée par <br />
+              <span className="italic font-normal text-gold-gradient">la clarté et l&apos;engagement humain.</span>
+            </>
+          ) : (
+            <>
+              Mastering complexity through <br />
+              <span className="italic font-normal text-gold-gradient">clarity and human leadership.</span>
+            </>
+          )}
         </h2>
-        <p className="text-base sm:text-lg text-zinc-400 font-normal">
-          {t.bento.subtitle}
+
+        <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl font-modern mt-2">
+          {language === 'fr'
+            ? "Les architectures critiques ne s'effondrent pas par manque de code, mais par défaut de communication. Mon rôle : bâtir des socles techniques infaillibles tout en insufflant une dynamique d'équipe bienveillante et exigeante."
+            : 'Mission-critical systems rarely fail from algorithms; they fail from communication debt. My mission is architecting unshakeable technical foundations while fostering team psychological safety and delivery cadence.'}
         </p>
       </div>
 
-      {/* Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6">
-        {/* Card 1: Thales CABIS - Biometrics (Large 7 cols) */}
-        <div className="md:col-span-7 glass-panel glass-panel-hover rounded-3xl p-7 sm:p-9 relative overflow-hidden flex flex-col justify-between group">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/10 transition-colors" />
+      {/* Asymmetric 3-Column Editorial Impact Dossiers */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        {/* Pillar 01: Sovereign Systems & Biometrics (Thales) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="lg:col-span-7 rounded-2xl p-8 sm:p-10 bg-glass-card hover:border-[#c5a880]/40 transition-all duration-500 relative overflow-hidden flex flex-col justify-between group"
+        >
+          <div className="absolute top-0 right-0 p-8 text-7xl sm:text-8xl font-editorial font-light text-white/[0.04] select-none group-hover:text-[#c5a880]/10 transition-colors">
+            01
+          </div>
 
           <div>
             <div className="flex items-center justify-between gap-4 mb-6">
-              <span className="px-3 py-1 rounded-full text-[11px] font-mono tracking-wide text-emerald-300 bg-emerald-500/10 border border-emerald-500/20">
-                {t.bento.card1.badge}
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#c5a880] font-medium font-modern">
+                {language === 'fr' ? 'Systèmes Critiques Régaliens' : 'Sovereign Critical Systems'}
               </span>
-              <span className="text-2xl sm:text-3xl font-semibold text-white font-mono">
-                {t.bento.card1.metric}
-              </span>
+              <span className="font-editorial text-2xl text-white">Thales DIS</span>
             </div>
 
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 rounded-xl bg-white/[0.05] text-emerald-400 border border-white/[0.08]">
-                <Shield className="w-5 h-5" />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                {t.bento.card1.title}
+            <div className="flex items-center gap-3 mb-4">
+              <Shield className="w-5 h-5 text-[#c5a880]" />
+              <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light">
+                {language === 'fr' ? 'Biométrie Nationale CABIS' : 'National Biometric CABIS Engine'}
               </h3>
             </div>
 
-            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed font-normal">
-              {t.bento.card1.description}
+            <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-light font-modern">
+              {language === 'fr'
+                ? "Conception et évolution du moteur biométrique d'identification judiciaire. Traitement de flux massifs d'empreintes et visages pour les forces de l'ordre nationales. Architecture réactive Java 21 & Vert.x, persistance PostgreSQL haute performance, exigence de haute disponibilité absolue."
+                : 'Core design and delivery of sovereign biometric judicial identification platforms. Processing millions of multimodal biometric transactions with reactive Vert.x & Java 21, PostgreSQL tuning, and uncompromising legal compliance.'}
             </p>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-white/[0.06] flex flex-wrap gap-2 text-xs font-mono text-zinc-400">
-            <span className="px-2.5 py-1 rounded-md bg-white/[0.04]">Java 21</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/[0.04]">Vert.x</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/[0.04]">PostgreSQL</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/[0.04]">RabbitMQ</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/[0.04]">Sovereignty</span>
+          <div className="mt-8 pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap gap-2 text-xs font-mono text-zinc-400">
+              <span className="px-2.5 py-1 rounded bg-white/[0.04] border border-white/5">Java 21</span>
+              <span className="px-2.5 py-1 rounded bg-white/[0.04] border border-white/5">Vert.x</span>
+              <span className="px-2.5 py-1 rounded bg-white/[0.04] border border-white/5">PostgreSQL</span>
+              <span className="px-2.5 py-1 rounded bg-white/[0.04] border border-white/5">Docker</span>
+            </div>
+            <span className="text-[11px] font-modern uppercase tracking-wider text-[#c5a880] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              {language === 'fr' ? 'Échelle Étatique' : 'State-level Scale'}
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </span>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Card 2: Agile Velocity & Scrum Master (5 cols) */}
-        <div className="md:col-span-5 glass-panel glass-panel-hover rounded-3xl p-7 sm:p-9 relative overflow-hidden flex flex-col justify-between group">
-          <div className="absolute top-0 right-0 w-60 h-60 bg-teal-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-teal-500/10 transition-colors" />
+        {/* Pillar 02: Scrum Master & Team Velocity */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="lg:col-span-5 rounded-2xl p-8 sm:p-10 bg-glass-card hover:border-[#c5a880]/40 transition-all duration-500 relative overflow-hidden flex flex-col justify-between group"
+        >
+          <div className="absolute top-0 right-0 p-8 text-7xl sm:text-8xl font-editorial font-light text-white/[0.04] select-none group-hover:text-[#c5a880]/10 transition-colors">
+            02
+          </div>
 
           <div>
             <div className="flex items-center justify-between gap-4 mb-6">
-              <span className="px-3 py-1 rounded-full text-[11px] font-mono tracking-wide text-teal-300 bg-teal-500/10 border border-teal-500/20">
-                {t.bento.card2.badge}
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#c5a880] font-medium font-modern">
+                {language === 'fr' ? 'Leadership d’Équipe' : 'Team Enablement'}
               </span>
-              <span className="text-2xl sm:text-3xl font-semibold text-emerald-400 font-mono">
-                {t.bento.card2.metric}
-              </span>
+              <span className="font-editorial text-3xl text-gold-gradient font-normal">+31%</span>
             </div>
 
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 rounded-xl bg-white/[0.05] text-teal-400 border border-white/[0.08]">
-                <TrendingUp className="w-5 h-5" />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                {t.bento.card2.title}
+            <div className="flex items-center gap-3 mb-4">
+              <Sparkles className="w-5 h-5 text-[#c5a880]" />
+              <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light">
+                {language === 'fr' ? 'Scrum Master Certifié (PSM I)' : 'Certified Scrum Master (PSM I)'}
               </h3>
             </div>
 
-            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed font-normal">
-              {t.bento.card2.description}
+            <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-light font-modern">
+              {language === 'fr'
+                ? "Transformation des rituels agiles en leviers d'autonomie réelle. Réduction des frictions inter-équipes, levée proactive des blocages techniques et accélération mesurable du delivery sans surchauffe humaine."
+                : 'Turned agile ceremonies into real leverage for developer autonomy. Eradicated cross-team blockers, boosted release cadence by +31%, and built a blameless culture focused on outcomes over theater.'}
             </p>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center gap-2 text-xs text-zinc-400">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span>Certified PSM I • Scrum.org</span>
+          <div className="mt-8 pt-6 border-t border-white/[0.08] flex items-center justify-between text-xs text-zinc-400 font-modern">
+            <span>Scrum.org Credential</span>
+            <span className="text-[#c5a880] font-medium">Cadence & Sécurité Psychologique</span>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Card 3: High Concurrency R&D - Tricentis (5 cols) */}
-        <div className="md:col-span-5 glass-panel glass-panel-hover rounded-3xl p-7 sm:p-9 relative overflow-hidden flex flex-col justify-between group">
-          <div className="absolute top-0 right-0 w-60 h-60 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-cyan-500/10 transition-colors" />
-
-          <div>
-            <div className="flex items-center justify-between gap-4 mb-6">
-              <span className="px-3 py-1 rounded-full text-[11px] font-mono tracking-wide text-cyan-300 bg-cyan-500/10 border border-cyan-500/20">
-                {t.bento.card3.badge}
-              </span>
-              <span className="text-2xl sm:text-3xl font-semibold text-white font-mono">
-                {t.bento.card3.metric}
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 rounded-xl bg-white/[0.05] text-cyan-400 border border-white/[0.08]">
-                <Cpu className="w-5 h-5" />
+        {/* Pillar 03: Decision-Making Under Stress (French Red Cross) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.25 }}
+          className="lg:col-span-12 rounded-2xl p-8 sm:p-10 bg-glass-card hover:border-[#c5a880]/40 transition-all duration-500 relative overflow-hidden group"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-[#c5a880] font-medium font-modern">
+                  03 • {language === 'fr' ? 'Leadership de Terrain' : 'Real-World Crisis Leadership'}
+                </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                {t.bento.card3.title}
-              </h3>
-            </div>
 
-            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed font-normal">
-              {t.bento.card3.description}
-            </p>
-          </div>
-
-          <div className="mt-8 pt-6 border-t border-white/[0.06] flex flex-wrap gap-2 text-xs font-mono text-zinc-400">
-            <span className="px-2.5 py-1 rounded-md bg-white/[0.04]">NeoLoad Core</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/[0.04]">Event Loops</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/[0.04]">Microservices</span>
-          </div>
-        </div>
-
-        {/* Card 4: Crisis Leadership - French Red Cross (Large 7 cols) */}
-        <div className="md:col-span-7 glass-panel glass-panel-hover rounded-3xl p-7 sm:p-9 relative overflow-hidden flex flex-col justify-between group">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-rose-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-rose-500/10 transition-colors" />
-
-          <div>
-            <div className="flex items-center justify-between gap-4 mb-6">
-              <span className="px-3 py-1 rounded-full text-[11px] font-mono tracking-wide text-rose-300 bg-rose-500/10 border border-rose-500/20">
-                {t.bento.card4.badge}
-              </span>
-              <span className="text-2xl sm:text-3xl font-semibold text-white font-mono">
-                {t.bento.card4.metric}
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 rounded-xl bg-white/[0.05] text-rose-400 border border-white/[0.08]">
-                <HeartHandshake className="w-5 h-5" />
+              <div className="flex items-center gap-3 mb-3">
+                <HeartHandshake className="w-5 h-5 text-[#c5a880]" />
+                <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light">
+                  {language === 'fr'
+                    ? 'Responsable Opérationnel de Secours — Croix-Rouge française'
+                    : 'Emergency Operations Director — French Red Cross'}
+                </h3>
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                {t.bento.card4.title}
-              </h3>
+
+              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-light font-modern max-w-3xl">
+                {language === 'fr'
+                  ? "Gestion des dispositifs de secours d'urgence, coordination d'équipes pluridisciplinaires et prise de décision rapide sous contrainte vitale. Ce sang-froid opérationnel s'applique directement au pilotage de crise technique en entreprise : diagnostic lucide, priorisation sans panique et protection des équipes."
+                  : 'Leading high-stakes emergency operations, coordinating multidisciplinary field units, and making critical decisions under pressure. This composure directly translates to engineering crisis management: clear head, decisive triage, and zero panic.'}
+              </p>
             </div>
 
-            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed font-normal">
-              {t.bento.card4.description}
-            </p>
+            <div className="lg:col-span-4 flex flex-col justify-center lg:items-end border-t lg:border-t-0 lg:border-l border-white/[0.08] pt-6 lg:pt-0 lg:pl-8">
+              <span className="font-editorial text-3xl sm:text-4xl text-white font-light">
+                {language === 'fr' ? 'Sang-Froid' : 'Composure'}
+              </span>
+              <span className="text-xs uppercase tracking-widest text-[#c5a880] mt-1 font-modern">
+                {language === 'fr' ? 'Gestion de Crise & Résilience' : 'Crisis Triage & Team Composure'}
+              </span>
+            </div>
           </div>
-
-          <div className="mt-8 pt-6 border-t border-white/[0.06] flex flex-wrap gap-2 text-xs font-mono text-zinc-400">
-            <span className="px-2.5 py-1 rounded-md bg-white/[0.04]">Tactical Triage</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/[0.04]">Team Psychological Safety</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/[0.04]">High-Stress Decisions</span>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
