@@ -14,11 +14,12 @@ const Hero = () => {
   const { t, language } = useTranslation();
 
   return (
-    <section id="overview" className="relative min-h-[92vh] pt-28 sm:pt-32 pb-16 flex flex-col justify-between overflow-hidden">
+    <section id="overview" className="w-full bg-[#070709] relative min-h-[92vh] pt-28 sm:pt-32 pb-16 flex flex-col justify-between overflow-hidden">
       {/* Warm ambient depth */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-[#c5a880]/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 
-      {/* Top Ledger: Geolocation & Temporal Stamp */}
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col justify-between flex-1">
+        {/* Top Ledger: Geolocation & Temporal Stamp */}
       <div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 sm:mb-12 z-10 font-mono text-[11px]">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -195,6 +196,7 @@ const Hero = () => {
           </span>
         </div>
       </motion.div>
+      </div>
     </section>
   );
 };

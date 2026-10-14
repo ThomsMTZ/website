@@ -53,12 +53,13 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 relative">
-      {/* Editorial Section Header */}
-      <div className="flex flex-col items-start gap-4 max-w-4xl mb-16 sm:mb-20">
-        <span className="font-mono text-xs text-[#c5a880] tracking-widest uppercase">
-          [ 06 // DIRECT CONDUIT ]
-        </span>
+    <section id="contact" className="w-full bg-[#070709] py-24 sm:py-32 border-t border-white/[0.05] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        {/* Editorial Section Header */}
+        <div className="flex flex-col items-start gap-4 max-w-4xl mb-16 sm:mb-20">
+          <span className="font-mono text-xs text-[#c5a880] tracking-widest uppercase">
+            [ 06 // DIRECT CONDUIT ]
+          </span>
 
         <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.05] tracking-[-0.02em]">
           {language === 'fr'
@@ -237,6 +238,7 @@ const ContactSection = () => {
             </div>
           </form>
         </div>
+      </div>
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ import ContactSection from './components/v2/ContactSection';
  */
 const Home = () => {
   return (
-    <div className="flex flex-col gap-8 sm:gap-12">
+    <div className="w-full flex flex-col">
       <Hero />
       <BentoImpact />
       <ProjectsShowcase />

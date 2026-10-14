@@ -7,10 +7,11 @@ import { projectsData } from '@/utils/data/projects-data';
 import { Lock, ArrowUpRight, Smartphone, Layers, Server, Compass } from 'lucide-react';
 import { BsGithub } from 'react-icons/bs';
 import { appleSpring, tactileTap } from '@/utils/motion';
+import { ThalesLogo, GooglePlayLogo } from './BrandLogos';
 
 /**
  * Editorial Projects Showcase featuring asymmetric flagship dossier layout,
- * real logos, and Apple-grade touch physics.
+ * real logos, visual previews, and Apple-grade touch physics.
  */
 const ProjectsShowcase = () => {
   const { language } = useTranslation();
@@ -41,57 +42,66 @@ const ProjectsShowcase = () => {
   const secondaryProjects = projectsData.filter(p => p.slug !== 'thales-cabis');
 
   return (
-    <section id="works" className="py-24 sm:py-32 relative">
-      {/* Editorial Section Header */}
-      <div className="flex flex-col items-start gap-4 max-w-4xl mb-16 sm:mb-20">
-        <span className="font-mono text-xs text-[#c5a880] tracking-widest uppercase">
-          [ 02 // SELECTED PRODUCTION RELEASES ]
-        </span>
+    <section id="works" className="w-full bg-[#08080a] py-24 sm:py-32 border-t border-white/[0.05] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        {/* Editorial Section Header */}
+        <div className="flex flex-col items-start gap-4 max-w-4xl mb-16 sm:mb-20">
+          <span className="font-mono text-xs text-[#c5a880] tracking-widest uppercase">
+            [ 02 // SELECTED PRODUCTION RELEASES ]
+          </span>
 
-        <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.05] tracking-[-0.02em]">
-          {language === 'fr'
-            ? 'Systèmes de production & Réalisations d’ingénierie.'
-            : 'Production Systems & Engineering Craft.'}
-        </h2>
+          <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.05] tracking-[-0.02em]">
+            {language === 'fr'
+              ? 'Systèmes de production & Réalisations d’ingénierie.'
+              : 'Production Systems & Engineering Craft.'}
+          </h2>
 
-        <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl font-modern">
-          {language === 'fr'
-            ? "Chaque projet illustre un défi technique précis : scalabilité concurrente, traitement temps réel, direction artistique singulière ou modèle produit éthique."
-            : 'Each showcase tackles a distinct engineering challenge: high concurrency, real-time data pipelines, bespoke art direction, or ethical product design.'}
-        </p>
-      </div>
+          <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl font-modern">
+            {language === 'fr'
+              ? "Chaque projet illustre un défi technique précis : scalabilité concurrente, traitement temps réel, direction artistique singulière ou modèle produit éthique."
+              : 'Each showcase tackles a distinct engineering challenge: high concurrency, real-time data pipelines, bespoke art direction, or ethical product design.'}
+          </p>
+        </div>
 
-      <div className="flex flex-col gap-8 sm:gap-10">
-        {/* Flagship Case Study: Thales CABIS (12-column Full-Width Deep Dossier) */}
-        {flagship && (
-          <motion.article
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={appleSpring}
-            whileTap={tactileTap}
-            className="rounded-2xl p-8 sm:p-12 bg-gradient-to-br from-[#12131a] via-[#0d0e14] to-[#0a0a0d] border border-white/10 card-tactile relative overflow-hidden group"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-              {/* Left Column: Dossier Overview */}
-              <div className="lg:col-span-8 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.08]">
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs text-[#c5a880]">01 / 04 // FLAGSHIP</span>
-                      <span className="text-zinc-600">&bull;</span>
-                      <span className="font-mono text-[11px] text-zinc-400 uppercase">
-                        {getLocalized(flagship.badge, language)}
-                      </span>
+        <div className="flex flex-col gap-8 sm:gap-10">
+          {/* Flagship Case Study: Thales CABIS (12-column Full-Width Deep Dossier) */}
+          {flagship && (
+            <motion.article
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={appleSpring}
+              whileTap={tactileTap}
+              className="rounded-2xl p-8 sm:p-12 bg-gradient-to-br from-[#12131a] via-[#0d0e14] to-[#0a0a0d] border border-white/10 card-tactile relative overflow-hidden group"
+            >
+              {/* Subtle Thales Watermark in Background */}
+              <div className="absolute -right-16 -bottom-16 w-96 h-48 opacity-[0.035] group-hover:opacity-[0.06] transition-opacity pointer-events-none select-none text-white overflow-hidden flex items-center justify-center">
+                <ThalesLogo watermark className="w-full h-full text-white" />
+              </div>
+
+              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                {/* Left Column: Dossier Overview */}
+                <div className="lg:col-span-8 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.08]">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-xs text-[#c5a880]">01 / 04 // FLAGSHIP</span>
+                        <span className="text-zinc-600">&bull;</span>
+                        <span className="font-mono text-[11px] text-zinc-400 uppercase">
+                          {getLocalized(flagship.badge, language)}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <ThalesLogo className="text-zinc-300" />
+                        <div className="p-2 rounded bg-white/[0.04] border border-white/10">
+                          {getProjectIcon(flagship.slug)}
+                        </div>
+                      </div>
                     </div>
-                    <div className="p-2 rounded bg-white/[0.04] border border-white/10">
-                      {getProjectIcon(flagship.slug)}
-                    </div>
-                  </div>
 
-                  <h3 className="font-editorial text-3xl sm:text-5xl text-white font-light mb-2">
-                    {flagship.name}
-                  </h3>
+                    <h3 className="font-editorial text-3xl sm:text-5xl text-white font-light mb-2">
+                      {flagship.name}
+                    </h3>
                   <p className="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-modern mb-5 font-medium">
                     {getLocalized(flagship.subtitle, language)}
                   </p>
@@ -197,6 +207,24 @@ const ProjectsShowcase = () => {
                     </div>
                   </div>
 
+                  {/* Visual Preview Media if available */}
+                  {project.preview && (
+                    <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden mb-5 bg-black/60 border border-white/[0.08] group-hover:border-[#c5a880]/30 transition-colors">
+                      <Image
+                        src={project.preview}
+                        alt={project.name}
+                        fill
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      {project.logo && (
+                        <div className="absolute bottom-3 left-3 w-8 h-8 rounded-lg overflow-hidden bg-black/70 border border-white/20 p-1 backdrop-blur-md">
+                          <Image src={project.logo} alt="Logo" width={32} height={32} className="object-contain" />
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   <div className="flex items-start justify-between gap-3 mb-3">
                     <div>
                       <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light group-hover:text-gold-gradient transition-colors">
@@ -207,7 +235,7 @@ const ProjectsShowcase = () => {
                       </p>
                     </div>
 
-                    {project.logo && (
+                    {project.logo && !project.preview && (
                       <div className="relative shrink-0 w-11 h-11 rounded-xl overflow-hidden bg-white/[0.04] border border-white/10 p-1 flex items-center justify-center">
                         <Image
                           src={project.logo}
@@ -253,7 +281,7 @@ const ProjectsShowcase = () => {
                         rel="noopener noreferrer"
                         className="btn-tactile inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] hover:bg-[#c5a880] text-zinc-200 hover:text-black border border-white/15 text-[11px] font-modern uppercase tracking-wider transition-all"
                       >
-                        <Smartphone className="w-3.5 h-3.5" />
+                        <GooglePlayLogo className="w-3.5 h-3.5" />
                         <span>Google Play</span>
                         <ArrowUpRight className="w-3 h-3" />
                       </a>
@@ -288,6 +316,7 @@ const ProjectsShowcase = () => {
             );
           })}
         </div>
+      </div>
       </div>
     </section>
   );

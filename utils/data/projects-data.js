@@ -58,7 +58,7 @@ export const projectsData = [
     tools: ['Python', 'FastAPI', 'Playwright', 'GitHub Actions', 'Telegram Bot API', 'TailwindCSS', 'REST API'],
     demo: 'https://jobradar-hub.com/',
     code: 'https://github.com/ThomsMTZ/MakingMoney',
-    logo: '/projects/jobradar-badge.png',
+    logo: '/projects/jobradar-icon.png',
     featured: true,
   },
   {
@@ -90,6 +90,7 @@ export const projectsData = [
     demo: 'https://arthur-portfolio-psi.vercel.app/',
     code: '',
     logo: '',
+    preview: '/projects/arthur-preview.jpg',
     featured: true,
   },
   {
@@ -122,6 +123,7 @@ export const projectsData = [
     playStore: 'https://play.google.com/store/apps/details?id=com.thomasmartinez.ledscroller',
     code: 'https://github.com/ThomsMTZ/LedScroller2025',
     logo: '/projects/ledscroller-icon.png',
+    preview: '/projects/pixelscroller-art.jpg',
     featured: true,
   },
 ];

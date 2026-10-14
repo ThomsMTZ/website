@@ -17,8 +17,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="mt-24 pt-12 pb-16 border-t border-white/[0.08] relative">
-      <div className="flex flex-col gap-10">
+    <footer className="w-full bg-[#050507] border-t border-white/[0.08] relative py-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col gap-10">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="flex flex-col">
             <span className="font-editorial text-2xl text-white font-light">

@@ -83,7 +83,7 @@ const RootLayout = ({ children }) => {
         <I18nProvider>
           <SmoothScroll>
             <Navbar />
-            <main className="min-h-screen relative mx-auto px-6 sm:px-10 lg:px-16 max-w-7xl">
+            <main className="min-h-screen relative w-full overflow-x-hidden">
               {children}
               <Footer />
             </main>

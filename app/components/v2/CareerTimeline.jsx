@@ -6,10 +6,11 @@ import { experiences } from '@/utils/data/experience';
 import { educations } from '@/utils/data/educations';
 import { MapPin } from 'lucide-react';
 import { appleSpring } from '@/utils/motion';
+import { ThalesLogo, TricentisLogo, CroixRougeLogo } from './BrandLogos';
 
 /**
  * Editorial Career Timeline and Academic / Certification Credentials.
- * Implements a Swiss Chronological Datum Line instead of repetitive card boxes.
+ * Implements a Swiss Chronological Datum Line with crisp company brand marks.
  */
 const CareerTimeline = () => {
   const { language } = useTranslation();
@@ -26,78 +27,95 @@ const CareerTimeline = () => {
     return field[lang] || field.en || [];
   };
 
+  const renderCompanyBadge = company => {
+    if (company.includes('Thales')) {
+      return <ThalesLogo className="text-zinc-300" />;
+    }
+    if (company.includes('Tricentis')) {
+      return <TricentisLogo className="text-zinc-300" />;
+    }
+    if (company.includes('Croix-Rouge')) {
+      return <CroixRougeLogo className="text-zinc-300" />;
+    }
+    return <span className="font-mono text-xs uppercase tracking-wider text-zinc-300 font-semibold">{company}</span>;
+  };
+
   return (
-    <section id="career" className="py-24 sm:py-32 relative">
-      {/* Editorial Section Header */}
-      <div className="flex flex-col items-start gap-4 max-w-4xl mb-16 sm:mb-20">
-        <span className="font-mono text-xs text-[#c5a880] tracking-widest uppercase">
-          [ 04 // CHRONOLOGY & PROVENANCE ]
-        </span>
+    <section id="career" className="w-full bg-[#090a0f] py-24 sm:py-32 border-t border-white/[0.05] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        {/* Editorial Section Header */}
+        <div className="flex flex-col items-start gap-4 max-w-4xl mb-16 sm:mb-20">
+          <span className="font-mono text-xs text-[#c5a880] tracking-widest uppercase">
+            [ 04 // CHRONOLOGY & PROVENANCE ]
+          </span>
 
-        <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.05] tracking-[-0.02em]">
-          {language === 'fr'
-            ? 'Six années en ingénierie logicielle critique.'
-            : 'Six years in mission-critical software engineering.'}
-        </h2>
+          <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.05] tracking-[-0.02em]">
+            {language === 'fr'
+              ? 'Six années en ingénierie logicielle critique.'
+              : 'Six years in mission-critical software engineering.'}
+          </h2>
 
-        <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl font-modern">
-          {language === 'fr'
-            ? "De l'ingénierie logicielle chez Thales et Tricentis au pilotage agile certifié, une progression continue guidée par l'impact et la robustesse."
-            : 'From software engineering at Thales and Tricentis to certified agile coaching, continuous growth driven by architectural excellence.'}
-        </p>
-      </div>
+          <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl font-modern">
+            {language === 'fr'
+              ? "De l'ingénierie logicielle chez Thales et Tricentis au pilotage agile certifié, une progression continue guidée par l'impact et la robustesse."
+              : 'From software engineering at Thales and Tricentis to certified agile coaching, continuous growth driven by architectural excellence.'}
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-        {/* Left Column: Swiss Chronological Datum Line (7 cols) */}
-        <div className="lg:col-span-7 flex flex-col">
-          <div className="pb-6 border-b border-white/10 mb-8 font-mono text-xs text-zinc-400 uppercase tracking-widest">
-            ENGINEERING_TIMELINE // 2019 — PRESENT
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          {/* Left Column: Swiss Chronological Datum Line (7 cols) */}
+          <div className="lg:col-span-7 flex flex-col">
+            <div className="pb-6 border-b border-white/10 mb-8 font-mono text-xs text-zinc-400 uppercase tracking-widest">
+              ENGINEERING_TIMELINE // 2019 — PRESENT
+            </div>
 
-          <div className="relative pl-6 sm:pl-8 border-l border-white/15 flex flex-col gap-12 sm:gap-14">
-            {experiences.map((exp, index) => {
-              const titleText = getLocalized(exp.title, language);
-              const badgeText = getLocalized(exp.badge, language);
-              const durationText = getLocalized(exp.duration, language);
-              const descriptionText = getLocalized(exp.description, language);
-              const highlightsList = getLocalizedList(exp.highlights, language);
+            <div className="relative pl-6 sm:pl-8 border-l border-white/15 flex flex-col gap-12 sm:gap-14">
+              {experiences.map((exp, index) => {
+                const titleText = getLocalized(exp.title, language);
+                const badgeText = getLocalized(exp.badge, language);
+                const durationText = getLocalized(exp.duration, language);
+                const descriptionText = getLocalized(exp.description, language);
+                const highlightsList = getLocalizedList(exp.highlights, language);
 
-              return (
-                <motion.article
-                  key={exp.id}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ ...appleSpring, delay: index * 0.08 }}
-                  className="relative group"
-                >
-                  {/* Datum Node Pip */}
-                  <span className="absolute -left-[31px] sm:-left-[39px] top-1.5 h-3 w-3 rounded-full bg-[#08080a] border-2 border-[#c5a880] group-hover:bg-[#c5a880] transition-colors" />
+                return (
+                  <motion.article
+                    key={exp.id}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ ...appleSpring, delay: index * 0.08 }}
+                    className="relative group"
+                  >
+                    {/* Datum Node Pip */}
+                    <span className="absolute -left-[31px] sm:-left-[39px] top-1.5 h-3 w-3 rounded-full bg-[#08080a] border-2 border-[#c5a880] group-hover:bg-[#c5a880] transition-colors" />
 
-                  {/* Header: Date + Badge */}
-                  <div className="flex flex-wrap items-center justify-between gap-3 mb-2 font-mono text-xs">
-                    <span className="text-[#c5a880] font-medium">{durationText}</span>
-                    <span className="text-[10px] uppercase tracking-wider text-zinc-400 bg-white/[0.04] px-2.5 py-0.5 rounded">
-                      {badgeText}
-                    </span>
-                  </div>
+                    {/* Header: Date + Badge */}
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-2 font-mono text-xs">
+                      <span className="text-[#c5a880] font-medium">{durationText}</span>
+                      <span className="text-[10px] uppercase tracking-wider text-zinc-400 bg-white/[0.04] px-2.5 py-0.5 rounded">
+                        {badgeText}
+                      </span>
+                    </div>
 
-                  <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light group-hover:text-gold-gradient transition-colors">
-                    {titleText}
-                  </h3>
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-1">
+                      <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light group-hover:text-gold-gradient transition-colors">
+                        {titleText}
+                      </h3>
+                      {renderCompanyBadge(exp.company)}
+                    </div>
 
-                  <div className="flex items-center gap-3 text-xs text-zinc-400 mt-1 mb-4 font-modern">
-                    <span className="text-zinc-200 font-medium">{exp.company}</span>
-                    <span>&bull;</span>
-                    <span className="flex items-center gap-1 text-zinc-500 font-mono text-[11px]">
-                      <MapPin className="w-3 h-3 text-zinc-600" />
-                      {exp.location}
-                    </span>
-                  </div>
+                    <div className="flex items-center gap-3 text-xs text-zinc-400 mt-1 mb-4 font-modern">
+                      <span className="text-zinc-200 font-medium">{exp.company}</span>
+                      <span>&bull;</span>
+                      <span className="flex items-center gap-1 text-zinc-500 font-mono text-[11px]">
+                        <MapPin className="w-3 h-3 text-zinc-600" />
+                        {exp.location}
+                      </span>
+                    </div>
 
-                  <p className="text-sm text-zinc-300 leading-relaxed font-light font-modern mb-4">
-                    {descriptionText}
-                  </p>
+                    <p className="text-sm text-zinc-300 leading-relaxed font-light font-modern mb-4">
+                      {descriptionText}
+                    </p>
 
                   <ul className="flex flex-col gap-2 mb-5">
                     {highlightsList.map(item => (
@@ -165,6 +183,7 @@ const CareerTimeline = () => {
             })}
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

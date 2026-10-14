@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from '@/utils/i18n';
 import { Shield, ArrowUpRight, Activity } from 'lucide-react';
 import { appleSpring, tactileTap } from '@/utils/motion';
+import { ThalesLogo, CroixRougeLogo, ScrumOrgBadge } from './BrandLogos';
 
 /**
  * Editorial Architectural Impact section replacing formulaic bento grids
@@ -13,52 +14,58 @@ const BentoImpact = () => {
   const { language } = useTranslation();
 
   return (
-    <section id="impact" className="py-24 sm:py-32 relative">
-      {/* Editorial Section Header: Index & Single Authoritative Headline */}
-      <div className="flex flex-col items-start gap-4 max-w-4xl mb-16 sm:mb-20">
-        <span className="font-mono text-xs text-[#c5a880] tracking-widest uppercase">
-          [ 01 // ARCHITECTURAL IMPACT & LEADERSHIP ]
-        </span>
+    <section id="impact" className="w-full bg-[#0b0c11] py-24 sm:py-32 border-t border-white/[0.05] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        {/* Editorial Section Header: Index & Single Authoritative Headline */}
+        <div className="flex flex-col items-start gap-4 max-w-4xl mb-16 sm:mb-20">
+          <span className="font-mono text-xs text-[#c5a880] tracking-widest uppercase">
+            [ 01 // ARCHITECTURAL IMPACT & LEADERSHIP ]
+          </span>
 
-        <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.05] tracking-[-0.02em]">
-          {language === 'fr'
-            ? 'Systèmes conçus pour zéro défaillance. Équipes animées dans la sérénité.'
-            : 'Systems engineered for zero failure. Teams built for calm delivery.'}
-        </h2>
+          <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.05] tracking-[-0.02em]">
+            {language === 'fr'
+              ? 'Systèmes conçus pour zéro défaillance. Équipes animées dans la sérénité.'
+              : 'Systems engineered for zero failure. Teams built for calm delivery.'}
+          </h2>
 
-        <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl font-modern">
-          {language === 'fr'
-            ? "Les architectures critiques ne s'effondrent pas par manque de code, mais par défaut de communication. Mon rôle : bâtir des socles techniques infaillibles tout en insufflant une dynamique d'équipe bienveillante et exigeante."
-            : 'Mission-critical systems rarely fail from algorithms; they fail from communication debt. My mission is architecting unshakeable technical foundations while fostering team psychological safety and delivery cadence.'}
-        </p>
-      </div>
+          <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl font-modern">
+            {language === 'fr'
+              ? "Les architectures critiques ne s'effondrent pas par manque de code, mais par défaut de communication. Mon rôle : bâtir des socles techniques infaillibles tout en insufflant une dynamique d'équipe bienveillante et exigeante."
+              : 'Mission-critical systems rarely fail from algorithms; they fail from communication debt. My mission is architecting unshakeable technical foundations while fostering team psychological safety and delivery cadence.'}
+          </p>
+        </div>
 
-      {/* Asymmetric 3-Column Editorial Impact Dossiers */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-        {/* Pillar 01: Sovereign Systems & Biometrics (Thales) — Deep Tech Blueprint */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={appleSpring}
-          whileTap={tactileTap}
-          className="lg:col-span-7 rounded-2xl p-8 sm:p-10 bg-gradient-to-br from-[#12131a] to-[#0a0a0e] border border-white/10 card-tactile flex flex-col justify-between group"
-        >
-          <div>
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-              <div className="flex items-center gap-2 font-mono text-[11px] text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>STATE-LEVEL RUNTIME // CABIS ENGINE</span>
+        {/* Asymmetric 3-Column Editorial Impact Dossiers */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          {/* Pillar 01: Sovereign Systems & Biometrics (Thales) — Deep Tech Blueprint */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={appleSpring}
+            whileTap={tactileTap}
+            className="lg:col-span-7 rounded-2xl p-8 sm:p-10 bg-gradient-to-br from-[#12131a] to-[#0a0a0e] border border-white/10 card-tactile flex flex-col justify-between group relative overflow-hidden"
+          >
+            {/* Subtle Sovereign Watermark */}
+            <div className="absolute -right-12 -bottom-12 w-80 h-40 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity pointer-events-none select-none text-white overflow-hidden flex items-center justify-center">
+              <ThalesLogo watermark className="w-full h-full text-white" />
+            </div>
+
+            <div className="relative z-10">
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+                <div className="flex items-center gap-2 font-mono text-[11px] text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>STATE-LEVEL RUNTIME // CABIS ENGINE</span>
+                </div>
+                <ThalesLogo className="text-zinc-200" />
               </div>
-              <span className="font-editorial text-2xl text-white">Thales DIS</span>
-            </div>
 
-            <div className="flex items-center gap-3 mb-4">
-              <Shield className="w-5 h-5 text-[#c5a880]" />
-              <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light">
-                {language === 'fr' ? 'Biométrie Nationale Judiciaire CABIS' : 'National Biometric CABIS Engine'}
-              </h3>
-            </div>
+              <div className="flex items-center gap-3 mb-4">
+                <Shield className="w-5 h-5 text-[#c5a880]" />
+                <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light">
+                  {language === 'fr' ? 'Biométrie Nationale Judiciaire CABIS' : 'National Biometric CABIS Engine'}
+                </h3>
+              </div>
 
             <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-light font-modern mb-6">
               {language === 'fr'
@@ -109,9 +116,12 @@ const BentoImpact = () => {
               </span>
             </div>
 
-            <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light mb-4">
-              {language === 'fr' ? 'Scrum Master Certifié (PSM I)' : 'Certified Scrum Master (PSM I)'}
-            </h3>
+            <div className="flex items-center justify-between gap-2 mb-3">
+              <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light">
+                {language === 'fr' ? 'Scrum Master Certifié (PSM I)' : 'Certified Scrum Master (PSM I)'}
+              </h3>
+              <ScrumOrgBadge />
+            </div>
 
             <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-light font-modern">
               {language === 'fr'
@@ -133,13 +143,21 @@ const BentoImpact = () => {
           viewport={{ once: true }}
           transition={{ ...appleSpring, delay: 0.15 }}
           whileTap={tactileTap}
-          className="lg:col-span-12 rounded-2xl p-8 sm:p-10 bg-glass-card border border-white/10 card-tactile group"
+          className="lg:col-span-12 rounded-2xl p-8 sm:p-10 bg-glass-card border border-white/10 card-tactile group relative overflow-hidden"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Subtle Red Cross Watermark */}
+          <div className="absolute -right-8 -bottom-8 w-60 h-60 opacity-[0.035] group-hover:opacity-[0.07] transition-opacity pointer-events-none select-none text-red-500 overflow-hidden flex items-center justify-center">
+            <CroixRougeLogo watermark className="w-full h-full text-red-500" />
+          </div>
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
-              <div className="flex items-center gap-3 mb-4 font-mono text-xs text-[#c5a880]">
-                <Activity className="w-4 h-4 text-[#c5a880]" />
-                <span>MARSEILLE OPERATIONAL UNIT // HIGH-STRESS FIELD COMMAND</span>
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <div className="flex items-center gap-3 font-mono text-xs text-[#c5a880]">
+                  <Activity className="w-4 h-4 text-[#c5a880]" />
+                  <span>MARSEILLE OPERATIONAL UNIT // HIGH-STRESS FIELD COMMAND</span>
+                </div>
+                <CroixRougeLogo className="text-zinc-200" />
               </div>
 
               <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light mb-3">
@@ -173,6 +191,7 @@ const BentoImpact = () => {
             </div>
           </div>
         </motion.div>
+      </div>
       </div>
     </section>
   );
