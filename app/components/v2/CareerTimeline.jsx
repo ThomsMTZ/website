@@ -4,10 +4,12 @@ import { motion } from 'framer-motion';
 import { useTranslation } from '@/utils/i18n';
 import { experiences } from '@/utils/data/experience';
 import { educations } from '@/utils/data/educations';
-import { Briefcase, Calendar, GraduationCap, MapPin, CheckCircle } from 'lucide-react';
+import { MapPin } from 'lucide-react';
+import { appleSpring } from '@/utils/motion';
 
 /**
- * Editorial Career Timeline and Academic / Certification Credentials with full bilingual support.
+ * Editorial Career Timeline and Academic / Certification Credentials.
+ * Implements a Swiss Chronological Datum Line instead of repetitive card boxes.
  */
 const CareerTimeline = () => {
   const { language } = useTranslation();
@@ -28,25 +30,14 @@ const CareerTimeline = () => {
     <section id="career" className="py-24 sm:py-32 relative">
       {/* Editorial Section Header */}
       <div className="flex flex-col items-start gap-4 max-w-4xl mb-16 sm:mb-20">
-        <div className="flex items-center gap-3">
-          <span className="h-[1px] w-8 bg-[#c5a880]" />
-          <span className="text-[11px] uppercase tracking-[0.3em] text-[#c5a880] font-medium font-modern">
-            {language === 'fr' ? 'Trajectoire & Qualifications' : 'Career Progression & Credentials'}
-          </span>
-        </div>
+        <span className="font-mono text-xs text-[#c5a880] tracking-widest uppercase">
+          [ 04 // CHRONOLOGY & PROVENANCE ]
+        </span>
 
         <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.05] tracking-[-0.02em]">
-          {language === 'fr' ? (
-            <>
-              Six années d’exigence technique, <br />
-              <span className="italic font-normal text-gold-gradient">validées par la pratique et la certification.</span>
-            </>
-          ) : (
-            <>
-              Six years of engineering craft, <br />
-              <span className="italic font-normal text-gold-gradient">grounded in production and certification.</span>
-            </>
-          )}
+          {language === 'fr'
+            ? 'Six années en ingénierie logicielle critique.'
+            : 'Six years in mission-critical software engineering.'}
         </h2>
 
         <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl font-modern">
@@ -56,17 +47,14 @@ const CareerTimeline = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Professional Experience Column (7 cols) */}
-        <div className="lg:col-span-7 flex flex-col gap-8">
-          <div className="flex items-center gap-3 pb-4 border-b border-white/[0.08]">
-            <Briefcase className="w-4 h-4 text-[#c5a880]" />
-            <h3 className="font-editorial text-2xl text-white font-light">
-              {language === 'fr' ? 'Expériences Professionnelles' : 'Professional Experience'}
-            </h3>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        {/* Left Column: Swiss Chronological Datum Line (7 cols) */}
+        <div className="lg:col-span-7 flex flex-col">
+          <div className="pb-6 border-b border-white/10 mb-8 font-mono text-xs text-zinc-400 uppercase tracking-widest">
+            ENGINEERING_TIMELINE // 2019 — PRESENT
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="relative pl-6 sm:pl-8 border-l border-white/15 flex flex-col gap-12 sm:gap-14">
             {experiences.map((exp, index) => {
               const titleText = getLocalized(exp.title, language);
               const badgeText = getLocalized(exp.badge, language);
@@ -77,51 +65,50 @@ const CareerTimeline = () => {
               return (
                 <motion.article
                   key={exp.id}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="rounded-2xl p-6 sm:p-8 bg-glass-card hover:border-[#c5a880]/40 transition-all duration-500 relative group"
+                  transition={{ ...appleSpring, delay: index * 0.08 }}
+                  className="relative group"
                 >
-                  <div>
-                    <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                      <span className="text-[10px] uppercase tracking-[0.2em] text-[#c5a880] font-modern font-medium">
-                        {badgeText}
-                      </span>
-                      <div className="flex items-center gap-1.5 text-xs text-zinc-400 font-modern">
-                        <Calendar className="w-3.5 h-3.5 text-zinc-500" />
-                        <span>{durationText}</span>
-                      </div>
-                    </div>
+                  {/* Datum Node Pip */}
+                  <span className="absolute -left-[31px] sm:-left-[39px] top-1.5 h-3 w-3 rounded-full bg-[#08080a] border-2 border-[#c5a880] group-hover:bg-[#c5a880] transition-colors" />
 
-                    <h4 className="font-editorial text-2xl sm:text-3xl text-white font-light group-hover:text-gold-gradient transition-colors">
-                      {titleText}
-                    </h4>
-
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-400 mt-1 mb-4 font-modern">
-                      <span className="text-zinc-200 font-medium">{exp.company}</span>
-                      <span>•</span>
-                      <span className="flex items-center gap-1 text-zinc-500">
-                        <MapPin className="w-3 h-3" />
-                        {exp.location}
-                      </span>
-                    </div>
-
-                    <p className="text-sm text-zinc-300 leading-relaxed font-light font-modern mb-5">
-                      {descriptionText}
-                    </p>
-
-                    <ul className="flex flex-col gap-2 mb-6">
-                      {highlightsList.map(item => (
-                        <li key={item} className="flex items-start gap-2.5 text-xs text-zinc-300 font-modern font-light">
-                          <CheckCircle className="w-3.5 h-3.5 text-[#c5a880] shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Header: Date + Badge */}
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-2 font-mono text-xs">
+                    <span className="text-[#c5a880] font-medium">{durationText}</span>
+                    <span className="text-[10px] uppercase tracking-wider text-zinc-400 bg-white/[0.04] px-2.5 py-0.5 rounded">
+                      {badgeText}
+                    </span>
                   </div>
 
-                  <div className="pt-4 border-t border-white/[0.08] flex flex-wrap gap-1.5">
+                  <h3 className="font-editorial text-2xl sm:text-3xl text-white font-light group-hover:text-gold-gradient transition-colors">
+                    {titleText}
+                  </h3>
+
+                  <div className="flex items-center gap-3 text-xs text-zinc-400 mt-1 mb-4 font-modern">
+                    <span className="text-zinc-200 font-medium">{exp.company}</span>
+                    <span>&bull;</span>
+                    <span className="flex items-center gap-1 text-zinc-500 font-mono text-[11px]">
+                      <MapPin className="w-3 h-3 text-zinc-600" />
+                      {exp.location}
+                    </span>
+                  </div>
+
+                  <p className="text-sm text-zinc-300 leading-relaxed font-light font-modern mb-4">
+                    {descriptionText}
+                  </p>
+
+                  <ul className="flex flex-col gap-2 mb-5">
+                    {highlightsList.map(item => (
+                      <li key={item} className="flex items-start gap-2.5 text-xs text-zinc-300 font-modern font-light">
+                        <span className="text-[#c5a880] font-mono mt-0.5">&bull;</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex flex-wrap gap-1.5">
                     {(exp.skills || []).map(t => (
                       <span
                         key={t}
@@ -137,16 +124,13 @@ const CareerTimeline = () => {
           </div>
         </div>
 
-        {/* Education, Certifications & Engagements Column (5 cols) */}
-        <div className="lg:col-span-5 flex flex-col gap-8">
-          <div className="flex items-center gap-3 pb-4 border-b border-white/[0.08]">
-            <GraduationCap className="w-4 h-4 text-[#c5a880]" />
-            <h3 className="font-editorial text-2xl text-white font-light">
-              {language === 'fr' ? 'Diplômes & Certifications' : 'Education & Certifications'}
-            </h3>
+        {/* Right Column: Accreditation Registry (5 cols) */}
+        <div className="lg:col-span-5 flex flex-col">
+          <div className="pb-6 border-b border-white/10 mb-8 font-mono text-xs text-zinc-400 uppercase tracking-widest">
+            ACCREDITATIONS & FORMAL TRAINING
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col divide-y divide-white/[0.08]">
             {educations.map((edu, index) => {
               const eduTitle = getLocalized(edu.title, language);
               const eduBadge = getLocalized(edu.badge, language);
@@ -155,23 +139,21 @@ const CareerTimeline = () => {
               return (
                 <motion.article
                   key={edu.id}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="rounded-2xl p-6 bg-glass-card hover:border-[#c5a880]/40 transition-all duration-500"
+                  transition={{ ...appleSpring, delay: index * 0.08 }}
+                  className="py-6 first:pt-0"
                 >
-                  <div className="flex items-center justify-between gap-3 mb-2">
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-[#c5a880] font-modern font-medium">
-                      {eduBadge}
-                    </span>
-                    <span className="text-xs text-zinc-400 font-modern">{edu.duration}</span>
+                  <div className="flex items-center justify-between gap-3 mb-2 font-mono text-xs">
+                    <span className="text-[#c5a880] text-[10px] uppercase tracking-wider">{eduBadge}</span>
+                    <span className="text-zinc-500">{edu.duration}</span>
                   </div>
 
-                  <h4 className="font-editorial text-xl sm:text-2xl text-white font-light mb-1">
+                  <h3 className="font-editorial text-xl sm:text-2xl text-white font-light mb-1">
                     {eduTitle}
-                  </h4>
-                  <p className="text-xs text-zinc-300 font-medium font-modern mb-3">
+                  </h3>
+                  <p className="text-xs text-zinc-300 font-medium font-modern mb-2">
                     {edu.institution}
                   </p>
 

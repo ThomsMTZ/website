@@ -4,12 +4,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/utils/i18n';
 import { personalData } from '@/utils/data/personal-data';
-import { Mail, Copy, Check, Send, MapPin, ArrowUpRight } from 'lucide-react';
+import { Copy, Check, Send, MapPin, ArrowUpRight } from 'lucide-react';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import { appleSpring, tactileTap } from '@/utils/motion';
 
 /**
- * Editorial ContactSection with 1-click email copy, social channels,
- * and working API contact form in a luxury palette.
+ * Editorial ContactSection with architectural input lines, tactile 1-click email copy,
+ * and Apple-grade button physics.
  */
 const ContactSection = () => {
   const { t, language } = useTranslation();
@@ -55,50 +56,40 @@ const ContactSection = () => {
     <section id="contact" className="py-24 sm:py-32 relative">
       {/* Editorial Section Header */}
       <div className="flex flex-col items-start gap-4 max-w-4xl mb-16 sm:mb-20">
-        <div className="flex items-center gap-3">
-          <span className="h-[1px] w-8 bg-[#c5a880]" />
-          <span className="text-[11px] uppercase tracking-[0.3em] text-[#c5a880] font-medium font-modern">
-            {language === 'fr' ? 'Échange Direct & Recrutement' : 'Get In Touch & Hiring'}
-          </span>
-        </div>
+        <span className="font-mono text-xs text-[#c5a880] tracking-widest uppercase">
+          [ 06 // DIRECT CONDUIT ]
+        </span>
 
         <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.05] tracking-[-0.02em]">
-          {language === 'fr' ? (
-            <>
-              Parlons de vos défis techniques, <br />
-              <span className="italic font-normal text-gold-gradient">autour d’un échange direct.</span>
-            </>
-          ) : (
-            <>
-              Let’s discuss your technical challenges, <br />
-              <span className="italic font-normal text-gold-gradient">with transparency and speed.</span>
-            </>
-          )}
+          {language === 'fr'
+            ? 'Échanger autour de vos défis techniques.'
+            : 'Initiate an engineering conversation.'}
         </h2>
 
         <p className="text-base sm:text-lg text-zinc-300 font-light leading-relaxed max-w-2xl font-modern">
           {language === 'fr'
-            ? "Disponible pour des postes de Senior Software Engineer, Tech Lead ou Scrum Master / Engineering Manager (CDI ou missions ciblées)."
-            : 'Available for Senior Software Engineer, Tech Lead, or Scrum Master / Engineering Manager opportunities.'}
+            ? "Disponible pour des opportunités de Senior Software Engineer, Tech Lead ou Scrum Master / Engineering Manager (Marseille, Paris ou Remote)."
+            : 'Available for Senior Software Engineer, Tech Lead, or Scrum Master / Engineering Manager opportunities (Marseille, Paris, or Remote).'}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14">
         {/* Left Side: Contact Channels & 1-Click Copy (5 cols) */}
-        <div className="lg:col-span-5 flex flex-col justify-between gap-6">
-          <div className="flex flex-col gap-4">
-            {/* Direct Email Card with Copy button */}
-            <div className="rounded-2xl p-6 sm:p-7 bg-glass-card hover:border-[#c5a880]/40 transition-all duration-500 flex flex-col gap-4">
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#c5a880] font-modern">
-                {t.contact.emailPrompt}
+        <div className="lg:col-span-5 flex flex-col justify-between gap-8">
+          <div className="flex flex-col gap-6">
+            {/* Direct Email Card with Tactile Copy */}
+            <div className="rounded-2xl p-7 bg-glass-card border border-white/10 flex flex-col gap-4">
+              <span className="font-mono text-xs text-[#c5a880] uppercase tracking-wider">
+                PRIMARY_DISPATCH // DIRECT EMAIL
               </span>
               <div className="flex items-center justify-between gap-3">
-                <span className="text-base sm:text-lg font-medium text-white truncate font-mono">
+                <span className="text-base sm:text-lg font-mono text-white truncate">
                   {personalData.email}
                 </span>
-                <button
+                <motion.button
+                  whileTap={tactileTap}
                   onClick={handleCopyEmail}
-                  className="p-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-zinc-300 hover:text-[#c5a880] transition-all flex items-center justify-center border border-white/[0.08]"
+                  className="btn-tactile p-2.5 rounded-full bg-white/[0.08] hover:bg-white/[0.15] text-zinc-300 hover:text-[#c5a880] transition-colors border border-white/10 shrink-0"
                   title="Copy email address"
                   aria-label="Copy email address"
                 >
@@ -107,70 +98,72 @@ const ContactSection = () => {
                   ) : (
                     <Copy className="w-4 h-4" />
                   )}
-                </button>
+                </motion.button>
               </div>
               {copied && (
-                <span className="text-xs text-[#c5a880] font-modern animate-in fade-in">
+                <span className="font-mono text-xs text-[#c5a880]">
                   ✓ {t.contact.copied}
                 </span>
               )}
             </div>
 
-            {/* Social Channels */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Social Channels Link Ledger */}
+            <div className="flex flex-col divide-y divide-white/[0.08] border-y border-white/[0.08]">
               <a
                 href={personalData.linkedIn}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl p-5 bg-glass-card hover:border-[#c5a880]/40 transition-all duration-500 flex flex-col justify-between gap-4 group"
+                className="py-4 flex items-center justify-between group"
               >
-                <div className="flex items-center justify-between">
-                  <BsLinkedin className="w-5 h-5 text-[#c5a880]" />
-                  <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-white transition-colors" />
+                <div className="flex items-center gap-3">
+                  <BsLinkedin className="w-4 h-4 text-[#c5a880]" />
+                  <span className="font-modern text-sm text-zinc-200 group-hover:text-white transition-colors">
+                    LinkedIn Profile
+                  </span>
                 </div>
-                <span className="text-xs font-medium text-zinc-200 font-modern">LinkedIn</span>
+                <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-[#c5a880] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </a>
 
               <a
                 href={personalData.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl p-5 bg-glass-card hover:border-[#c5a880]/40 transition-all duration-500 flex flex-col justify-between gap-4 group"
+                className="py-4 flex items-center justify-between group"
               >
-                <div className="flex items-center justify-between">
-                  <BsGithub className="w-5 h-5 text-[#c5a880]" />
-                  <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-white transition-colors" />
+                <div className="flex items-center gap-3">
+                  <BsGithub className="w-4 h-4 text-[#c5a880]" />
+                  <span className="font-modern text-sm text-zinc-200 group-hover:text-white transition-colors">
+                    GitHub Codebase
+                  </span>
                 </div>
-                <span className="text-xs font-medium text-zinc-200 font-modern">GitHub</span>
+                <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-[#c5a880] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </a>
             </div>
 
-            {/* Location Pill */}
-            <div className="rounded-2xl p-5 bg-glass-card flex items-center gap-3 text-xs text-zinc-400 font-modern">
-              <MapPin className="w-4 h-4 text-[#c5a880] shrink-0" />
+            {/* Geolocation Stamp */}
+            <div className="flex items-center gap-2.5 font-mono text-xs text-zinc-400">
+              <MapPin className="w-3.5 h-3.5 text-[#c5a880] shrink-0" />
               <span>{personalData.address}</span>
             </div>
           </div>
 
-          <div className="p-5 rounded-2xl bg-[#c5a880]/[0.05] border border-[#c5a880]/20 text-xs text-zinc-300 flex flex-col gap-1 font-modern">
-            <span className="font-semibold text-[#c5a880]">
-              {language === 'fr' ? 'Réponse Rapide Garantie' : 'Fast Response Commitment'}
-            </span>
-            <span className="text-zinc-400 font-light">
+          <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] font-mono text-xs text-zinc-400 flex flex-col gap-1">
+            <span className="text-[#c5a880] font-semibold">RESPONSE_SLA: &lt; 24H</span>
+            <span className="font-modern text-zinc-400 font-light text-xs">
               {language === 'fr'
                 ? 'Je consulte régulièrement mes messages et réponds sous 24 heures ouvrées.'
-                : 'I regularly review direct inquiries and reply within 24 business hours.'}
+                : 'Direct engineering inquiries receive a response within 24 business hours.'}
             </span>
           </div>
         </div>
 
-        {/* Right Side: Message Form (7 cols) */}
-        <div className="lg:col-span-7 rounded-2xl p-7 sm:p-9 bg-glass-card border border-white/10">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {/* Right Side: Architectural Message Terminal (7 cols) */}
+        <div className="lg:col-span-7 rounded-2xl p-8 sm:p-10 bg-glass-card border border-white/10">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-[11px] font-modern uppercase tracking-wider text-zinc-400">
-                  {t.contact.form.name}
+                <label htmlFor="name" className="font-mono text-[11px] text-zinc-400 uppercase tracking-wider">
+                  NAME // CONTACT
                 </label>
                 <input
                   id="name"
@@ -178,14 +171,14 @@ const ContactSection = () => {
                   required
                   value={formState.name}
                   onChange={e => setFormState({ ...formState, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] focus:border-[#c5a880] text-sm text-white outline-none transition-colors font-modern"
+                  className="input-architectural text-sm text-white font-modern"
                   placeholder="Jean Dupont"
                 />
               </div>
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-[11px] font-modern uppercase tracking-wider text-zinc-400">
-                  {t.contact.form.email}
+                <label htmlFor="email" className="font-mono text-[11px] text-zinc-400 uppercase tracking-wider">
+                  EMAIL // DIRECT
                 </label>
                 <input
                   id="email"
@@ -193,23 +186,23 @@ const ContactSection = () => {
                   required
                   value={formState.email}
                   onChange={e => setFormState({ ...formState, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] focus:border-[#c5a880] text-sm text-white outline-none transition-colors font-modern"
+                  className="input-architectural text-sm text-white font-modern"
                   placeholder="jean@company.com"
                 />
               </div>
             </div>
 
             <div className="flex flex-col gap-2">
-              <label htmlFor="message" className="text-[11px] font-modern uppercase tracking-wider text-zinc-400">
-                {t.contact.form.message}
+              <label htmlFor="message" className="font-mono text-[11px] text-zinc-400 uppercase tracking-wider">
+                TRANSMISSION // MESSAGE
               </label>
               <textarea
                 id="message"
                 required
-                rows={5}
+                rows={4}
                 value={formState.message}
                 onChange={e => setFormState({ ...formState, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] focus:border-[#c5a880] text-sm text-white outline-none transition-colors resize-none font-modern"
+                className="input-architectural text-sm text-white font-modern resize-none"
                 placeholder={
                   language === 'fr'
                     ? "Présentez brièvement vos enjeux techniques ou votre opportunité..."
@@ -218,23 +211,26 @@ const ContactSection = () => {
               />
             </div>
 
-            <div className="flex items-center justify-between pt-2">
-              <button
+            <div className="flex items-center justify-between pt-4">
+              <motion.button
                 type="submit"
                 disabled={status === 'sending'}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-zinc-950 hover:bg-[#c5a880] font-medium text-xs uppercase tracking-widest transition-all duration-300 disabled:opacity-50"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.96 }}
+                transition={appleSpring}
+                className="btn-tactile inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-zinc-950 font-medium text-xs uppercase tracking-widest hover:bg-[#eae6df] shadow-lg disabled:opacity-50"
               >
                 <span>{status === 'sending' ? t.contact.form.sending : t.contact.form.send}</span>
                 <Send className="w-3.5 h-3.5" />
-              </button>
+              </motion.button>
 
               {status === 'success' && (
-                <span className="text-xs text-[#c5a880] font-modern">
+                <span className="font-mono text-xs text-[#c5a880]">
                   ✓ {t.contact.form.success}
                 </span>
               )}
               {status === 'error' && (
-                <span className="text-xs text-rose-400 font-modern">
+                <span className="font-mono text-xs text-rose-400">
                   ✕ {t.contact.form.error}
                 </span>
               )}

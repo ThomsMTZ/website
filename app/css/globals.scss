@@ -93,6 +93,50 @@ body {
   background-size: 24px 24px;
 }
 
+/* Apple-grade physical touch interaction */
+.btn-tactile {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.btn-tactile:active {
+  transform: scale(0.965) translateY(1px);
+}
+
+.card-tactile {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.card-tactile:hover {
+  transform: translateY(-2px);
+}
+
+.card-tactile:active {
+  transform: scale(0.985) translateY(0px);
+}
+
+/* Bespoke architectural input styling */
+.input-architectural {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0;
+  padding: 0.75rem 0;
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.input-architectural:focus {
+  border-bottom-color: #c5a880;
+}
+
 /* Card glass effect */
 .glass-panel {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.008) 100%);

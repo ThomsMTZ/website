@@ -16,8 +16,15 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 25);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 25);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -71,7 +78,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={() => changeLanguage('fr')}
-              className={`px-3 py-1 rounded-full text-[11px] font-modern uppercase tracking-wider font-semibold transition-all duration-200 ${
+              className={`btn-tactile px-3 py-1 rounded-full text-[11px] font-modern uppercase tracking-wider font-semibold transition-all duration-200 ${
                 language === 'fr'
                   ? 'bg-[#c5a880] text-black shadow-md'
                   : 'text-zinc-400 hover:text-white'
@@ -83,7 +90,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={() => changeLanguage('en')}
-              className={`px-3 py-1 rounded-full text-[11px] font-modern uppercase tracking-wider font-semibold transition-all duration-200 ${
+              className={`btn-tactile px-3 py-1 rounded-full text-[11px] font-modern uppercase tracking-wider font-semibold transition-all duration-200 ${
                 language === 'en'
                   ? 'bg-[#c5a880] text-black shadow-md'
                   : 'text-zinc-400 hover:text-white'
@@ -99,7 +106,7 @@ const Navbar = () => {
             href={personalData.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-modern uppercase tracking-wider text-white bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-[#c5a880]/50 transition-all duration-200 shadow-sm"
+            className="btn-tactile hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-modern uppercase tracking-wider text-white bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-[#c5a880]/50 transition-all duration-200 shadow-sm"
           >
             <FileText className="w-3.5 h-3.5 text-[#c5a880]" />
             <span>{t.navbar.resume}</span>
