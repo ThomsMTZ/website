@@ -36,6 +36,24 @@ export const educations = [
   {
     id: 3,
     title: {
+      fr: 'Model Context Protocol (MCP) & Architectures Claude',
+      en: 'Model Context Protocol (MCP) & Claude Architecture',
+    },
+    institution: 'Anthropic Claude Academy',
+    duration: '2026',
+    verifyUrl: 'https://academy.claude.com/verify/3bb12ac7090398ddd8c938f05f4bbfd4',
+    description: {
+      fr: 'Accréditation officielle Anthropic validant la conception de serveurs et clients MCP, la connexion d’agents autonomes aux systèmes d’entreprise et l’orchestration de contextes dynamiques.',
+      en: 'Official Anthropic credential validating MCP client/server architecture, connecting autonomous agents to enterprise systems, and dynamic context orchestration.',
+    },
+    badge: {
+      fr: 'Accréditation Anthropic',
+      en: 'Anthropic Credential',
+    },
+  },
+  {
+    id: 4,
+    title: {
       fr: 'TOEIC Anglais Professionnel — Score 835',
       en: 'TOEIC Professional English — Score 835',
     },

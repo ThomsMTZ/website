@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from '@/utils/i18n';
 import { experiences } from '@/utils/data/experience';
 import { educations } from '@/utils/data/educations';
-import { MapPin } from 'lucide-react';
+import { MapPin, ArrowUpRight } from 'lucide-react';
 import { appleSpring } from '@/utils/motion';
 import { ThalesLogo, TricentisNeoLoadLogo, CroixRougeBadge } from './BrandLogos';
 
@@ -194,6 +194,20 @@ const CareerTimeline = () => {
                   <p className="text-xs text-zinc-400 font-light leading-relaxed font-modern">
                     {eduDesc}
                   </p>
+
+                  {edu.verifyUrl && (
+                    <a
+                      href={edu.verifyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 mt-3 text-[11px] font-mono text-[#c5a880] hover:text-white transition-colors group"
+                    >
+                      <span className="underline underline-offset-4 decoration-[#c5a880]/40 group-hover:decoration-white">
+                        {language === 'fr' ? 'Vérifier l’accréditation officielle' : 'Verify Official Credential'}
+                      </span>
+                      <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                  )}
                 </motion.article>
               );
             })}
