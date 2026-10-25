@@ -54,18 +54,18 @@ export const educations = [
   {
     id: 4,
     title: {
-      fr: 'TOEIC Anglais Professionnel — Score 835',
-      en: 'TOEIC Professional English — Score 835',
+      fr: 'Anglais Professionnel Opérationnel (C1)',
+      en: 'Professional English Proficiency (C1)',
     },
-    institution: 'ETS Global',
+    institution: 'ETS Global / International Business',
     duration: '2020',
     description: {
-      fr: 'Capacité éprouvée à piloter des équipes, des revues d’architecture et des projets en environnement international bilingue.',
-      en: 'Demonstrated proficiency leading international squads, technical architecture reviews, and global stakeholder delivery.',
+      fr: 'Capacité éprouvée à piloter des équipes distribuées, des revues d’architecture et des projets en environnement international bilingue.',
+      en: 'Demonstrated fluency leading international squads, technical architecture reviews, and global stakeholder delivery.',
     },
     badge: {
-      fr: 'Langue Internationale',
-      en: 'International Language',
+      fr: 'Bilingue Professionnel',
+      en: 'Bilingual Delivery',
     },
   },
 ];

@@ -57,7 +57,7 @@ export const projectsData = [
     company: 'Independent SaaS',
     tools: ['Python', 'FastAPI', 'Playwright', 'GitHub Actions', 'Telegram Bot API', 'TailwindCSS', 'REST API'],
     demo: 'https://jobradar-hub.com/',
-    code: 'https://github.com/ThomsMTZ/MakingMoney',
+    code: '',
     logo: '/projects/jobradar-icon.png',
     featured: true,
   },

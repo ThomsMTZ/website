@@ -171,7 +171,7 @@ const Hero = () => {
         className="mt-14 sm:mt-18 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 z-10"
       >
         <div className="flex flex-col">
-          <span className="font-editorial text-3xl sm:text-4xl text-white font-light">6+ Ans</span>
+          <span className="font-editorial text-3xl sm:text-4xl text-white font-light">{language === 'fr' ? '6+ Ans' : '6+ Years'}</span>
           <span className="text-[10px] uppercase tracking-wider text-zinc-400 mt-1 font-mono">
             {language === 'fr' ? 'Expérience Ingénierie' : 'Engineering Craft'}
           </span>
@@ -182,7 +182,7 @@ const Hero = () => {
             +31% <span className="text-xs text-[#c5a880] font-mono">↑</span>
           </span>
           <span className="text-[10px] uppercase tracking-wider text-zinc-400 mt-1 font-mono">
-            {language === 'fr' ? 'Vélocité Équipe Mesurée' : 'Measured Team Velocity'}
+            {language === 'fr' ? 'Throughput Delivery Accéléré' : 'Feature Throughput Gain'}
           </span>
         </div>
 
